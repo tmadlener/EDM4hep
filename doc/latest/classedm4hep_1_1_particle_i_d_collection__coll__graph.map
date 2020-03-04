@@ -1,12 +1,12 @@
 <map id="edm4hep::ParticleIDCollection" name="edm4hep::ParticleIDCollection">
-<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="1067,83,1285,109"/>
+<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="1067,63,1285,89"/>
 <area shape="rect" id="node2" title=" " alt="" coords="783,5,901,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="536,101,711,142"/>
-<area shape="rect" id="node4" title=" " alt="" coords="22,107,173,133"/>
-<area shape="rect" id="node6" href="$classedm4hep_1_1_particle_i_d_obj.html" title=" " alt="" coords="337,203,512,229"/>
-<area shape="rect" id="node5" title=" " alt="" coords="735,179,949,205"/>
-<area shape="rect" id="node7" title=" " alt="" coords="59,208,135,235"/>
-<area shape="rect" id="node8" href="$classedm4hep_1_1_particle_i_d_data.html" title="ParticleID." alt="" coords="5,259,189,285"/>
-<area shape="rect" id="node9" title="STL class." alt="" coords="777,248,907,275"/>
-<area shape="rect" id="node10" title=" " alt="" coords="405,253,444,280"/>
+<area shape="rect" id="node3" title=" " alt="" coords="536,107,711,149"/>
+<area shape="rect" id="node4" title=" " alt="" coords="22,113,173,140"/>
+<area shape="rect" id="node6" href="$classedm4hep_1_1_particle_i_d_obj.html" title=" " alt="" coords="337,227,512,253"/>
+<area shape="rect" id="node5" title=" " alt="" coords="735,188,949,215"/>
+<area shape="rect" id="node7" title=" " alt="" coords="59,227,135,253"/>
+<area shape="rect" id="node8" href="$classedm4hep_1_1_particle_i_d_data.html" title="ParticleID." alt="" coords="5,285,189,312"/>
+<area shape="rect" id="node9" title="STL class." alt="" coords="777,264,907,291"/>
+<area shape="rect" id="node10" title=" " alt="" coords="405,277,444,304"/>
 </map>

@@ -1,0 +1,12 @@
+<map id="plcio::EventHeaderCollection" name="plcio::EventHeaderCollection">
+<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="5,453,216,480"/>
+<area shape="rect" id="node2" title=" " alt="" coords="51,364,170,391"/>
+<area shape="rect" id="node3" title=" " alt="" coords="193,364,431,391"/>
+<area shape="rect" id="node4" href="$classplcio_1_1_event_header_obj.html" title=" " alt="" coords="229,275,395,301"/>
+<area shape="rect" id="node5" title=" " alt="" coords="274,185,350,212"/>
+<area shape="rect" id="node6" href="$classplcio_1_1_event_header_data.html" title="Event Header." alt="" coords="375,185,551,212"/>
+<area shape="rect" id="node7" title="STL class." alt="" coords="419,96,506,123"/>
+<area shape="rect" id="node8" title="STL class." alt="" coords="393,5,532,47"/>
+<area shape="rect" id="node9" title="STL class." alt="" coords="454,364,583,391"/>
+<area shape="rect" id="node10" title=" " alt="" coords="499,275,538,301"/>
+</map>

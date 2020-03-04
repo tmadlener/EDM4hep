@@ -1,0 +1,11 @@
+<map id="include/edm4hep/CalorimeterHitConst.h" name="include/edm4hep/CalorimeterHitConst.h">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,220,47"/>
+<area shape="rect" id="node2" href="$include_2edm4hep_2_vector3f_8h.html" title=" " alt="" coords="117,244,204,271"/>
+<area shape="rect" id="node4" href="$include_2edm4hep_2_calorimeter_hit_data_8h.html" title=" " alt="" coords="80,169,241,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="81,95,144,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="169,95,299,121"/>
+<area shape="rect" id="node7" href="$include_2edm4hep_2_calorimeter_hit_obj_8h.html" title=" " alt="" coords="323,95,475,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="191,319,271,345"/>
+<area shape="rect" id="node8" title=" " alt="" coords="353,169,419,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="443,169,571,196"/>
+</map>

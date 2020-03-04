@@ -1,0 +1,13 @@
+<map id="include/edm4hep/CalorimeterHitConst.h" name="include/edm4hep/CalorimeterHitConst.h">
+<area shape="rect" id="node1" title=" " alt="" coords="176,5,391,47"/>
+<area shape="rect" id="node2" href="$include_2edm4hep_2_calorimeter_hit_8h.html" title=" " alt="" coords="176,95,391,136"/>
+<area shape="rect" id="node3" href="$include_2edm4hep_2_calorimeter_hit_collection_8h.html" title=" " alt="" coords="5,184,220,225"/>
+<area shape="rect" id="node4" href="$include_2edm4hep_2_cluster_8h.html" title=" " alt="" coords="354,273,549,300"/>
+<area shape="rect" id="node5" href="$include_2edm4hep_2_cluster_const_8h.html" title=" " alt="" coords="141,355,375,382"/>
+<area shape="rect" id="node11" href="$include_2edm4hep_2_cluster_obj_8h.html" title=" " alt="" coords="346,191,565,218"/>
+<area shape="rect" id="node6" href="$include_2edm4hep_2_cluster_collection_8h.html" title=" " alt="" coords="757,355,1018,382"/>
+<area shape="rect" id="node7" href="$include_2edm4hep_2_reconstructed_particle_8h.html" title=" " alt="" coords="451,437,681,479"/>
+<area shape="rect" id="node8" href="$include_2edm4hep_2_reconstructed_particle_const_8h.html" title=" " alt="" coords="444,527,675,568"/>
+<area shape="rect" id="node10" href="$include_2edm4hep_2_reconstructed_particle_obj_8h.html" title=" " alt="" coords="501,348,732,389"/>
+<area shape="rect" id="node9" href="$include_2edm4hep_2_reconstructed_particle_collection_8h.html" title=" " alt="" coords="699,527,929,568"/>
+</map>

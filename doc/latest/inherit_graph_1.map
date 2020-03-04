@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,450,124,477"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,479,124,506"/>
 <area shape="rect" id="node2" href="$classedm4hep_1_1_calo_hit_contribution_collection.html" title="A Collection is identified by an ID." alt="" coords="195,5,414,47"/>
 <area shape="rect" id="node3" href="$classedm4hep_1_1_calorimeter_hit_collection.html" title="A Collection is identified by an ID." alt="" coords="179,71,431,98"/>
 <area shape="rect" id="node4" href="$classedm4hep_1_1_cluster_collection.html" title="A Collection is identified by an ID." alt="" coords="203,122,406,149"/>
@@ -16,4 +16,5 @@
 <area shape="rect" id="node15" href="$classedm4hep_1_1_track_collection.html" title="A Collection is identified by an ID." alt="" coords="209,770,400,797"/>
 <area shape="rect" id="node16" href="$classedm4hep_1_1_tracker_hit_collection.html" title="A Collection is identified by an ID." alt="" coords="193,821,416,847"/>
 <area shape="rect" id="node17" href="$classedm4hep_1_1_vertex_collection.html" title="A Collection is identified by an ID." alt="" coords="205,871,404,898"/>
+<area shape="rect" id="node18" href="$classplcio_1_1_event_header_collection.html" title="A Collection is identified by an ID." alt="" coords="199,922,410,949"/>
 </map>

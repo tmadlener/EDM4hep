@@ -1,10 +1,10 @@
 <map id="edm4hep::RawCalorimeterHitCollection" name="edm4hep::RawCalorimeterHitCollection">
-<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="41,288,256,329"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,191,124,218"/>
-<area shape="rect" id="node3" title=" " alt="" coords="147,184,358,225"/>
-<area shape="rect" id="node4" href="$classedm4hep_1_1_raw_calorimeter_hit_obj.html" title=" " alt="" coords="134,95,371,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="215,5,291,32"/>
-<area shape="rect" id="node6" href="$classedm4hep_1_1_raw_calorimeter_hit_data.html" title="Raw calorimeter hit." alt="" coords="315,5,561,32"/>
-<area shape="rect" id="node7" title="STL class." alt="" coords="381,191,511,218"/>
-<area shape="rect" id="node8" title=" " alt="" coords="427,95,465,121"/>
+<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="5,288,220,329"/>
+<area shape="rect" id="node2" title=" " alt="" coords="53,191,172,218"/>
+<area shape="rect" id="node3" title=" " alt="" coords="195,184,406,225"/>
+<area shape="rect" id="node4" href="$classedm4hep_1_1_raw_calorimeter_hit_obj.html" title=" " alt="" coords="182,95,419,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="263,5,339,32"/>
+<area shape="rect" id="node6" href="$classedm4hep_1_1_raw_calorimeter_hit_data.html" title="Raw calorimeter hit." alt="" coords="363,5,609,32"/>
+<area shape="rect" id="node7" title="STL class." alt="" coords="429,191,559,218"/>
+<area shape="rect" id="node8" title=" " alt="" coords="475,95,513,121"/>
 </map>
