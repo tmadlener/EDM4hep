@@ -1,0 +1,13 @@
+<map id="edm4hep::CalorimeterHitCollection" name="edm4hep::CalorimeterHitCollection">
+<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="1197,73,1449,100"/>
+<area shape="rect" id="node2" title=" " alt="" coords="898,5,1061,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="920,56,1039,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="879,107,1080,149"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_calorimeter_hit_obj.html" title=" " alt="" coords="556,115,765,141"/>
+<area shape="rect" id="node6" title=" " alt="" coords="305,64,425,91"/>
+<area shape="rect" id="node7" title=" " alt="" coords="327,115,403,141"/>
+<area shape="rect" id="node8" href="$classedm4hep_1_1_calorimeter_hit_data.html" title="Calorimeter hit." alt="" coords="256,165,475,192"/>
+<area shape="rect" id="node9" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="5,165,151,192"/>
+<area shape="rect" id="node10" title="STL class." alt="" coords="915,173,1044,200"/>
+<area shape="rect" id="node11" title=" " alt="" coords="641,173,680,200"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="edm4hep::CaloHitContributionData" name="edm4hep::CaloHitContributionData">
+<area shape="rect" id="node1" title="Monte Carlo contribution to SimCalorimeterHit." alt="" coords="5,95,256,121"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="58,5,203,32"/>
+</map>

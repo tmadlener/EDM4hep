@@ -1,0 +1,6 @@
+<map id="edm4hep::MCParticleData" name="edm4hep::MCParticleData">
+<area shape="rect" id="node1" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="155,124,345,151"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="5,5,153,32"/>
+<area shape="rect" id="node3" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="177,5,323,32"/>
+<area shape="rect" id="node4" href="$classedm4hep_1_1_vector2i.html" title=" " alt="" coords="357,5,501,32"/>
+</map>

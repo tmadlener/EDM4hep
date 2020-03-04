@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['quality',['quality',['../classedm4hep_1_1_sim_tracker_hit_collection.html#abbfb0ee22d26e4553af247e46793e74a',1,'edm4hep::SimTrackerHitCollection::quality()'],['../classedm4hep_1_1_t_p_c_hit_collection.html#a41c259313bc8f459ad503ffd7c6b9797',1,'edm4hep::TPCHitCollection::quality()'],['../classedm4hep_1_1_tracker_hit_collection.html#acba26b924e20b8ee4a916126d8f390cd',1,'edm4hep::TrackerHitCollection::quality()'],['../classedm4hep_1_1_sim_tracker_hit_collection.html#abcae2fdb9f2bbb4e68ae75fa89b78ff0',1,'edm4hep::SimTrackerHitCollection::quality()'],['../classedm4hep_1_1_t_p_c_hit_collection.html#a9627d87cc5dadb0a1b1d19fe279b933d',1,'edm4hep::TPCHitCollection::quality()'],['../classedm4hep_1_1_tracker_hit_collection.html#acec809021985fba6bc76b725d0779f0f',1,'edm4hep::TrackerHitCollection::quality()']]]
+];

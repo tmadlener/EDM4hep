@@ -1,0 +1,10 @@
+<map id="edm4hep::TrackerHit" name="edm4hep::TrackerHit">
+<area shape="rect" id="node1" title="Tracker hit." alt="" coords="37,288,194,315"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_tracker_hit_obj.html" title=" " alt="" coords="26,199,205,225"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,102,81,129"/>
+<area shape="rect" id="node4" title=" " alt="" coords="105,95,272,136"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_object_i_d.html" title=" " alt="" coords="115,5,262,32"/>
+<area shape="rect" id="node6" href="$classedm4hep_1_1_tracker_hit_data.html" title="Tracker hit." alt="" coords="296,102,484,129"/>
+<area shape="rect" id="node7" title=" " alt="" coords="299,5,457,32"/>
+<area shape="rect" id="node8" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="481,5,629,32"/>
+</map>
