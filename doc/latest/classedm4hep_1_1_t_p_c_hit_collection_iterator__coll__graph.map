@@ -1,9 +1,9 @@
 <map id="edm4hep::TPCHitCollectionIterator" name="edm4hep::TPCHitCollectionIterator">
-<area shape="rect" id="node1" title=" " alt="" coords="67,273,267,315"/>
-<area shape="rect" id="node2" href="$classedm4hep_1_1_t_p_c_hit.html" title="Time Projection Chamber Hit." alt="" coords="5,184,140,211"/>
-<area shape="rect" id="node3" href="$classedm4hep_1_1_t_p_c_hit_obj.html" title=" " alt="" coords="89,95,246,121"/>
-<area shape="rect" id="node7" title=" " alt="" coords="165,184,362,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="129,5,205,32"/>
-<area shape="rect" id="node5" title=" " alt="" coords="230,5,369,32"/>
-<area shape="rect" id="node6" href="$classedm4hep_1_1_t_p_c_hit_data.html" title="Time Projection Chamber Hit." alt="" coords="393,5,560,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="70,273,255,315"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_t_p_c_hit.html" title="Time Projection Chamber Hit." alt="" coords="11,184,138,211"/>
+<area shape="rect" id="node3" href="$classedm4hep_1_1_t_p_c_hit_obj.html" title=" " alt="" coords="89,95,236,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="162,184,342,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,5,77,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="101,5,224,32"/>
+<area shape="rect" id="node6" href="$classedm4hep_1_1_t_p_c_hit_data.html" title="Time Projection Chamber Hit." alt="" coords="248,5,403,32"/>
 </map>

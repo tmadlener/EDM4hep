@@ -1,0 +1,15 @@
+<map id="edm4hep/edm4hep/SimCalorimeterHitObj.h" name="edm4hep/edm4hep/SimCalorimeterHitObj.h">
+<area shape="rect" id="node1" title=" " alt="" coords="616,5,843,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="531,370,592,397"/>
+<area shape="rect" id="node3" title=" " alt="" coords="193,527,265,553"/>
+<area shape="rect" id="node4" title=" " alt="" coords="743,370,862,397"/>
+<area shape="rect" id="node5" href="$_sim_calorimeter_hit_data_8h.html" title=" " alt="" coords="843,95,1029,136"/>
+<area shape="rect" id="node7" href="$_calo_hit_contribution_8h.html" title=" " alt="" coords="298,102,502,129"/>
+<area shape="rect" id="node9" title=" " alt="" coords="608,281,667,307"/>
+<area shape="rect" id="node6" href="$_vector3f_8h.html" title=" " alt="" coords="440,452,579,479"/>
+<area shape="rect" id="node8" href="$_calo_hit_contribution_data_8h.html" title=" " alt="" coords="121,363,314,404"/>
+<area shape="rect" id="node10" title=" " alt="" coords="212,191,279,218"/>
+<area shape="rect" id="node11" title=" " alt="" coords="144,281,264,307"/>
+<area shape="rect" id="node12" href="$_calo_hit_contribution_const_8h.html" title=" " alt="" coords="303,184,497,225"/>
+<area shape="rect" id="node13" href="$_calo_hit_contribution_obj_8h.html" title=" " alt="" coords="390,273,583,315"/>
+</map>

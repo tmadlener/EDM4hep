@@ -1,13 +1,19 @@
 var searchData=
 [
-  ['simcalorimeterhit',['SimCalorimeterHit',['../classedm4hep_1_1_sim_calorimeter_hit.html',1,'edm4hep']]],
-  ['simcalorimeterhitcollection',['SimCalorimeterHitCollection',['../classedm4hep_1_1_sim_calorimeter_hit_collection.html',1,'edm4hep']]],
-  ['simcalorimeterhitcollectioniterator',['SimCalorimeterHitCollectionIterator',['../classedm4hep_1_1_sim_calorimeter_hit_collection_iterator.html',1,'edm4hep']]],
-  ['simcalorimeterhitdata',['SimCalorimeterHitData',['../classedm4hep_1_1_sim_calorimeter_hit_data.html',1,'edm4hep']]],
-  ['simcalorimeterhitobj',['SimCalorimeterHitObj',['../classedm4hep_1_1_sim_calorimeter_hit_obj.html',1,'edm4hep']]],
-  ['simtrackerhit',['SimTrackerHit',['../classedm4hep_1_1_sim_tracker_hit.html',1,'edm4hep']]],
-  ['simtrackerhitcollection',['SimTrackerHitCollection',['../classedm4hep_1_1_sim_tracker_hit_collection.html',1,'edm4hep']]],
-  ['simtrackerhitcollectioniterator',['SimTrackerHitCollectionIterator',['../classedm4hep_1_1_sim_tracker_hit_collection_iterator.html',1,'edm4hep']]],
-  ['simtrackerhitdata',['SimTrackerHitData',['../classedm4hep_1_1_sim_tracker_hit_data.html',1,'edm4hep']]],
-  ['simtrackerhitobj',['SimTrackerHitObj',['../classedm4hep_1_1_sim_tracker_hit_obj.html',1,'edm4hep']]]
+  ['tpchit',['TPCHit',['../classedm4hep_1_1_t_p_c_hit.html',1,'edm4hep']]],
+  ['tpchitcollection',['TPCHitCollection',['../classedm4hep_1_1_t_p_c_hit_collection.html',1,'edm4hep']]],
+  ['tpchitcollectioniterator',['TPCHitCollectionIterator',['../classedm4hep_1_1_t_p_c_hit_collection_iterator.html',1,'edm4hep']]],
+  ['tpchitdata',['TPCHitData',['../classedm4hep_1_1_t_p_c_hit_data.html',1,'edm4hep']]],
+  ['tpchitobj',['TPCHitObj',['../classedm4hep_1_1_t_p_c_hit_obj.html',1,'edm4hep']]],
+  ['track',['Track',['../classedm4hep_1_1_track.html',1,'edm4hep']]],
+  ['trackcollection',['TrackCollection',['../classedm4hep_1_1_track_collection.html',1,'edm4hep']]],
+  ['trackcollectioniterator',['TrackCollectionIterator',['../classedm4hep_1_1_track_collection_iterator.html',1,'edm4hep']]],
+  ['trackdata',['TrackData',['../classedm4hep_1_1_track_data.html',1,'edm4hep']]],
+  ['trackerhit',['TrackerHit',['../classedm4hep_1_1_tracker_hit.html',1,'edm4hep']]],
+  ['trackerhitcollection',['TrackerHitCollection',['../classedm4hep_1_1_tracker_hit_collection.html',1,'edm4hep']]],
+  ['trackerhitcollectioniterator',['TrackerHitCollectionIterator',['../classedm4hep_1_1_tracker_hit_collection_iterator.html',1,'edm4hep']]],
+  ['trackerhitdata',['TrackerHitData',['../classedm4hep_1_1_tracker_hit_data.html',1,'edm4hep']]],
+  ['trackerhitobj',['TrackerHitObj',['../classedm4hep_1_1_tracker_hit_obj.html',1,'edm4hep']]],
+  ['trackobj',['TrackObj',['../classedm4hep_1_1_track_obj.html',1,'edm4hep']]],
+  ['trackstate',['TrackState',['../classedm4hep_1_1_track_state.html',1,'edm4hep']]]
 ];

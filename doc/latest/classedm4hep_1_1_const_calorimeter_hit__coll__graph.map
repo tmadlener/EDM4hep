@@ -1,8 +1,7 @@
 <map id="edm4hep::ConstCalorimeterHit" name="edm4hep::ConstCalorimeterHit">
-<area shape="rect" id="node1" title="Calorimeter hit." alt="" coords="76,273,300,300"/>
-<area shape="rect" id="node2" href="$classedm4hep_1_1_calorimeter_hit_obj.html" title=" " alt="" coords="83,184,293,211"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,95,125,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="150,95,226,121"/>
-<area shape="rect" id="node5" href="$classedm4hep_1_1_calorimeter_hit_data.html" title="Calorimeter hit." alt="" coords="251,95,469,121"/>
-<area shape="rect" id="node6" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="287,5,433,32"/>
+<area shape="rect" id="node1" title="Calorimeter hit." alt="" coords="5,273,208,300"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_calorimeter_hit_obj.html" title=" " alt="" coords="13,184,200,211"/>
+<area shape="rect" id="node3" title=" " alt="" coords="30,95,141,121"/>
+<area shape="rect" id="node4" href="$classedm4hep_1_1_calorimeter_hit_data.html" title="Calorimeter hit." alt="" coords="165,95,360,121"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="197,5,329,32"/>
 </map>

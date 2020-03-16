@@ -1,52 +1,52 @@
 <map id="edm4hep::ReconstructedParticleCollection" name="edm4hep::ReconstructedParticleCollection">
-<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="5293,494,5524,535"/>
-<area shape="rect" id="node2" title=" " alt="" coords="4981,93,5100,120"/>
-<area shape="rect" id="node3" title=" " alt="" coords="2125,63,2291,105"/>
-<area shape="rect" id="node5" href="$classedm4hep_1_1_cluster_obj.html" title=" " alt="" coords="2471,240,2629,267"/>
-<area shape="rect" id="node38" href="$classedm4hep_1_1_reconstructed_particle_obj.html" title=" " alt="" coords="2928,853,3181,880"/>
-<area shape="rect" id="node47" title=" " alt="" coords="4160,143,4391,185"/>
-<area shape="rect" id="node4" href="$classedm4hep_1_1_const_cluster.html" title="Calorimeter Hit Cluster." alt="" coords="2967,112,3142,139"/>
-<area shape="rect" id="node6" title=" " alt="" coords="337,725,413,752"/>
-<area shape="rect" id="node9" href="$classedm4hep_1_1_particle_i_d_obj.html" title=" " alt="" coords="1360,629,1535,656"/>
-<area shape="rect" id="node14" href="$classedm4hep_1_1_calorimeter_hit_obj.html" title=" " alt="" coords="1343,363,1552,389"/>
-<area shape="rect" id="node23" href="$classedm4hep_1_1_track_obj.html" title=" " alt="" coords="1820,1104,1967,1131"/>
-<area shape="rect" id="node29" href="$classedm4hep_1_1_tracker_hit_obj.html" title=" " alt="" coords="605,1180,784,1207"/>
-<area shape="rect" id="node44" href="$classedm4hep_1_1_vertex_obj.html" title=" " alt="" coords="3947,687,4102,713"/>
-<area shape="rect" id="node7" title=" " alt="" coords="2125,449,2291,490"/>
-<area shape="rect" id="node36" title=" " alt="" coords="2657,470,2904,511"/>
-<area shape="rect" id="node8" href="$classedm4hep_1_1_const_particle_i_d.html" title="ParticleID." alt="" coords="1798,629,1989,656"/>
-<area shape="rect" id="node10" href="$classedm4hep_1_1_particle_i_d_data.html" title="ParticleID." alt="" coords="971,688,1155,715"/>
-<area shape="rect" id="node11" title=" " alt="" coords="988,539,1139,565"/>
-<area shape="rect" id="node12" title=" " alt="" coords="2119,319,2297,361"/>
-<area shape="rect" id="node13" href="$classedm4hep_1_1_const_calorimeter_hit.html" title="Calorimeter hit." alt="" coords="1781,355,2005,381"/>
-<area shape="rect" id="node15" title=" " alt="" coords="1003,363,1123,389"/>
-<area shape="rect" id="node16" href="$classedm4hep_1_1_calorimeter_hit_data.html" title="Calorimeter hit." alt="" coords="954,312,1173,339"/>
-<area shape="rect" id="node17" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="622,488,767,515"/>
-<area shape="rect" id="node18" href="$classedm4hep_1_1_cluster_data.html" title="Calorimeter Hit Cluster." alt="" coords="979,155,1147,181"/>
-<area shape="rect" id="node25" href="$classedm4hep_1_1_track_state.html" title=" " alt="" coords="984,987,1143,1013"/>
-<area shape="rect" id="node41" href="$classedm4hep_1_1_reconstructed_particle_data.html" title="Reconstructed Particle." alt="" coords="932,837,1195,864"/>
-<area shape="rect" id="node45" href="$classedm4hep_1_1_vertex_data.html" title="Vertex." alt="" coords="981,488,1145,515"/>
-<area shape="rect" id="node19" title=" " alt="" coords="5,288,164,315"/>
-<area shape="rect" id="node32" href="$classedm4hep_1_1_tracker_hit_data.html" title="Tracker hit." alt="" coords="281,985,469,1012"/>
-<area shape="rect" id="node20" title=" " alt="" coords="3205,1046,3424,1087"/>
-<area shape="rect" id="node21" title=" " alt="" coords="2467,1045,2633,1086"/>
-<area shape="rect" id="node22" href="$classedm4hep_1_1_const_track.html" title="Reconstructed track." alt="" coords="2127,1052,2289,1079"/>
-<area shape="rect" id="node24" title=" " alt="" coords="1364,963,1531,1005"/>
-<area shape="rect" id="node26" title=" " alt="" coords="611,1016,778,1043"/>
-<area shape="rect" id="node27" title=" " alt="" coords="1364,1230,1531,1271"/>
-<area shape="rect" id="node28" href="$classedm4hep_1_1_const_tracker_hit.html" title="Tracker hit." alt="" coords="966,1193,1161,1220"/>
-<area shape="rect" id="node30" title=" " alt="" coords="292,1247,459,1289"/>
-<area shape="rect" id="node31" href="$classedm4hep_1_1_object_i_d.html" title=" " alt="" coords="11,1255,158,1281"/>
-<area shape="rect" id="node33" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="11,985,159,1012"/>
-<area shape="rect" id="node34" title=" " alt="" coords="1378,1029,1517,1056"/>
-<area shape="rect" id="node35" href="$classedm4hep_1_1_track_data.html" title="Reconstructed track." alt="" coords="1369,1179,1525,1205"/>
-<area shape="rect" id="node37" title=" " alt="" coords="3692,837,3889,878"/>
-<area shape="rect" id="node40" href="$classedm4hep_1_1_const_reconstructed_particle.html" title="Reconstructed Particle." alt="" coords="3448,762,3668,803"/>
-<area shape="rect" id="node39" title=" " alt="" coords="3913,903,4136,945"/>
-<area shape="rect" id="node48" title=" " alt="" coords="4609,878,4933,919"/>
-<area shape="rect" id="node42" title=" " alt="" coords="611,837,778,864"/>
-<area shape="rect" id="node43" href="$classedm4hep_1_1_const_vertex.html" title="Vertex." alt="" coords="4415,687,4585,713"/>
-<area shape="rect" id="node46" title=" " alt="" coords="4957,575,5124,617"/>
-<area shape="rect" id="node49" title="STL class." alt="" coords="4976,1104,5105,1131"/>
-<area shape="rect" id="node50" title=" " alt="" coords="4481,1104,4519,1131"/>
+<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="4780,601,4992,642"/>
+<area shape="rect" id="node2" title=" " alt="" coords="4494,5,4605,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="2307,169,2457,210"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_cluster_obj.html" title=" " alt="" coords="2639,335,2785,361"/>
+<area shape="rect" id="node38" href="$classedm4hep_1_1_reconstructed_particle_obj.html" title=" " alt="" coords="2596,575,2828,601"/>
+<area shape="rect" id="node47" title=" " alt="" coords="2860,107,3065,149"/>
+<area shape="rect" id="node4" href="$classedm4hep_1_1_const_cluster.html" title="Calorimeter Hit Cluster." alt="" coords="3119,267,3279,293"/>
+<area shape="rect" id="node6" title=" " alt="" coords="306,637,378,664"/>
+<area shape="rect" id="node9" href="$classedm4hep_1_1_particle_i_d_obj.html" title=" " alt="" coords="1731,655,1893,681"/>
+<area shape="rect" id="node23" href="$classedm4hep_1_1_track_obj.html" title=" " alt="" coords="1744,875,1880,901"/>
+<area shape="rect" id="node29" href="$classedm4hep_1_1_tracker_hit_obj.html" title=" " alt="" coords="553,883,717,909"/>
+<area shape="rect" id="node44" href="$classedm4hep_1_1_vertex_obj.html" title=" " alt="" coords="3561,344,3702,371"/>
+<area shape="rect" id="node7" title=" " alt="" coords="2307,689,2457,730"/>
+<area shape="rect" id="node36" title=" " alt="" coords="2852,759,3073,801"/>
+<area shape="rect" id="node8" href="$classedm4hep_1_1_const_particle_i_d.html" title="ParticleID." alt="" coords="2007,655,2183,681"/>
+<area shape="rect" id="node10" href="$classedm4hep_1_1_particle_i_d_data.html" title="ParticleID." alt="" coords="1337,648,1507,675"/>
+<area shape="rect" id="node11" title=" " alt="" coords="1355,473,1489,500"/>
+<area shape="rect" id="node12" title=" " alt="" coords="2301,289,2463,330"/>
+<area shape="rect" id="node13" href="$classedm4hep_1_1_const_calorimeter_hit.html" title="Calorimeter hit." alt="" coords="1993,265,2196,292"/>
+<area shape="rect" id="node14" href="$classedm4hep_1_1_calorimeter_hit_obj.html" title=" " alt="" coords="1719,265,1905,292"/>
+<area shape="rect" id="node15" title=" " alt="" coords="1367,327,1477,353"/>
+<area shape="rect" id="node16" href="$classedm4hep_1_1_calorimeter_hit_data.html" title="Calorimeter hit." alt="" coords="1119,265,1313,292"/>
+<area shape="rect" id="node17" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="569,265,701,292"/>
+<area shape="rect" id="node18" href="$classedm4hep_1_1_cluster_data.html" title="Calorimeter Hit Cluster." alt="" coords="898,213,1051,240"/>
+<area shape="rect" id="node25" href="$classedm4hep_1_1_track_state.html" title=" " alt="" coords="901,753,1048,780"/>
+<area shape="rect" id="node41" href="$classedm4hep_1_1_reconstructed_particle_data.html" title="Reconstructed Particle." alt="" coords="855,476,1095,503"/>
+<area shape="rect" id="node45" href="$classedm4hep_1_1_vertex_data.html" title="Vertex." alt="" coords="900,13,1049,40"/>
+<area shape="rect" id="node19" title=" " alt="" coords="5,136,147,163"/>
+<area shape="rect" id="node32" href="$classedm4hep_1_1_tracker_hit_data.html" title="Tracker hit." alt="" coords="256,928,428,955"/>
+<area shape="rect" id="node20" title=" " alt="" coords="3759,811,3955,853"/>
+<area shape="rect" id="node21" title=" " alt="" coords="2307,810,2457,851"/>
+<area shape="rect" id="node22" href="$classedm4hep_1_1_const_track.html" title="Reconstructed track." alt="" coords="2019,877,2170,904"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1347,750,1497,791"/>
+<area shape="rect" id="node26" title=" " alt="" coords="561,753,709,780"/>
+<area shape="rect" id="node27" title=" " alt="" coords="1347,867,1497,909"/>
+<area shape="rect" id="node28" href="$classedm4hep_1_1_const_tracker_hit.html" title="Tracker hit." alt="" coords="885,876,1064,903"/>
+<area shape="rect" id="node30" title=" " alt="" coords="267,862,417,903"/>
+<area shape="rect" id="node31" href="$classedm4hep_1_1_object_i_d.html" title=" " alt="" coords="9,869,143,896"/>
+<area shape="rect" id="node33" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="9,928,143,955"/>
+<area shape="rect" id="node34" title=" " alt="" coords="1361,984,1483,1011"/>
+<area shape="rect" id="node35" href="$classedm4hep_1_1_track_data.html" title="Reconstructed track." alt="" coords="1350,933,1494,960"/>
+<area shape="rect" id="node37" title=" " alt="" coords="3324,630,3504,671"/>
+<area shape="rect" id="node40" href="$classedm4hep_1_1_const_reconstructed_particle.html" title="Reconstructed Particle." alt="" coords="3097,509,3300,550"/>
+<area shape="rect" id="node39" title=" " alt="" coords="3528,553,3735,594"/>
+<area shape="rect" id="node48" title=" " alt="" coords="4159,570,4451,611"/>
+<area shape="rect" id="node42" title=" " alt="" coords="561,476,709,503"/>
+<area shape="rect" id="node43" href="$classedm4hep_1_1_const_vertex.html" title="Vertex." alt="" coords="3979,416,4135,443"/>
+<area shape="rect" id="node46" title=" " alt="" coords="4475,409,4624,450"/>
+<area shape="rect" id="node49" title="STL class." alt="" coords="4491,920,4607,947"/>
+<area shape="rect" id="node50" title=" " alt="" coords="4037,920,4076,947"/>
 </map>

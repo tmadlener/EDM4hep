@@ -1,11 +1,13 @@
 <map id="dataframe/edm4hepRDF.cc" name="dataframe/edm4hepRDF.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="370,5,567,32"/>
-<area shape="rect" id="node2" href="$dataframe_2edm4hep_r_d_f_8h.html" title=" " alt="" coords="336,80,455,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="479,80,608,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,68,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="92,155,155,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="179,155,377,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="402,155,623,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="647,155,799,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="824,155,980,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="233,5,415,32"/>
+<area shape="rect" id="node2" href="$edm4hep_r_d_f_8h.html" title=" " alt="" coords="196,80,311,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="335,80,457,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,64,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="88,155,147,181"/>
+<area shape="rect" id="node5" href="$_m_c_particle_data_8h.html" title=" " alt="" coords="449,155,631,181"/>
+<area shape="rect" id="node8" href="$_vector3d_8h.html" title=" " alt="" coords="251,229,394,256"/>
+<area shape="rect" id="node9" href="$_vector3f_8h.html" title=" " alt="" coords="419,229,557,256"/>
+<area shape="rect" id="node10" href="$_sim_tracker_hit_data_8h.html" title=" " alt="" coords="221,155,424,181"/>
+<area shape="rect" id="node6" href="$_vector2i_8h.html" title=" " alt="" coords="581,229,720,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="452,304,524,331"/>
 </map>

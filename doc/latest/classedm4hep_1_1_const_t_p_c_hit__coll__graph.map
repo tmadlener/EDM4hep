@@ -1,7 +1,7 @@
 <map id="edm4hep::ConstTPCHit" name="edm4hep::ConstTPCHit">
-<area shape="rect" id="node1" title="Time Projection Chamber Hit." alt="" coords="5,184,177,211"/>
-<area shape="rect" id="node2" href="$classedm4hep_1_1_t_p_c_hit_obj.html" title=" " alt="" coords="13,95,170,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="53,5,129,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="154,5,293,32"/>
-<area shape="rect" id="node5" href="$classedm4hep_1_1_t_p_c_hit_data.html" title="Time Projection Chamber Hit." alt="" coords="317,5,484,32"/>
+<area shape="rect" id="node1" title="Time Projection Chamber Hit." alt="" coords="81,184,244,211"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_t_p_c_hit_obj.html" title=" " alt="" coords="89,95,236,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,77,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="101,5,224,32"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_t_p_c_hit_data.html" title="Time Projection Chamber Hit." alt="" coords="248,5,403,32"/>
 </map>

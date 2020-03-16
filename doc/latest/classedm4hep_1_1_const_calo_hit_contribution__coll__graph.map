@@ -1,13 +1,13 @@
 <map id="edm4hep::ConstCaloHitContribution" name="edm4hep::ConstCaloHitContribution">
-<area shape="rect" id="node1" title="Monte Carlo contribution to SimCalorimeterHit." alt="" coords="172,511,428,537"/>
-<area shape="rect" id="node2" href="$classedm4hep_1_1_calo_hit_contribution_obj.html" title=" " alt="" coords="179,414,421,441"/>
-<area shape="rect" id="node3" title=" " alt="" coords="262,124,338,151"/>
-<area shape="rect" id="node5" href="$classedm4hep_1_1_m_c_particle_obj.html" title=" " alt="" coords="364,225,545,252"/>
-<area shape="rect" id="node4" href="$classedm4hep_1_1_const_m_c_particle.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="362,316,558,343"/>
-<area shape="rect" id="node10" title=" " alt="" coords="483,407,650,448"/>
-<area shape="rect" id="node6" href="$classedm4hep_1_1_m_c_particle_data.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="362,124,553,151"/>
-<area shape="rect" id="node7" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="550,5,698,32"/>
-<area shape="rect" id="node8" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="129,5,274,32"/>
-<area shape="rect" id="node11" href="$classedm4hep_1_1_calo_hit_contribution_data.html" title="Monte Carlo contribution to SimCalorimeterHit." alt="" coords="5,175,256,201"/>
-<area shape="rect" id="node9" href="$classedm4hep_1_1_vector2i.html" title=" " alt="" coords="381,5,525,32"/>
+<area shape="rect" id="node1" title="Monte Carlo contribution to SimCalorimeterHit." alt="" coords="134,511,366,537"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_calo_hit_contribution_obj.html" title=" " alt="" coords="141,414,359,441"/>
+<area shape="rect" id="node3" title=" " alt="" coords="209,124,281,151"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_m_c_particle_obj.html" title=" " alt="" coords="299,225,467,252"/>
+<area shape="rect" id="node4" href="$classedm4hep_1_1_const_m_c_particle.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="288,316,471,343"/>
+<area shape="rect" id="node10" title=" " alt="" coords="414,407,563,448"/>
+<area shape="rect" id="node6" href="$classedm4hep_1_1_m_c_particle_data.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="305,124,481,151"/>
+<area shape="rect" id="node7" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="481,5,616,32"/>
+<area shape="rect" id="node8" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="109,5,241,32"/>
+<area shape="rect" id="node11" href="$classedm4hep_1_1_calo_hit_contribution_data.html" title="Monte Carlo contribution to SimCalorimeterHit." alt="" coords="5,175,231,201"/>
+<area shape="rect" id="node9" href="$classedm4hep_1_1_vector2i.html" title=" " alt="" coords="326,5,457,32"/>
 </map>

@@ -1,10 +1,10 @@
 <map id="edm4hep::ConstMCParticle" name="edm4hep::ConstMCParticle">
-<area shape="rect" id="node1" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="13,5,209,32"/>
-<area shape="rect" id="node8" title=" " alt="" coords="5,124,172,165"/>
-<area shape="rect" id="node2" href="$classedm4hep_1_1_m_c_particle_obj.html" title=" " alt="" coords="238,243,419,269"/>
-<area shape="rect" id="node3" title=" " alt="" coords="291,131,367,158"/>
-<area shape="rect" id="node4" href="$classedm4hep_1_1_m_c_particle_data.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="391,131,581,158"/>
-<area shape="rect" id="node5" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="241,5,389,32"/>
-<area shape="rect" id="node6" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="413,5,559,32"/>
-<area shape="rect" id="node7" href="$classedm4hep_1_1_vector2i.html" title=" " alt="" coords="593,5,737,32"/>
+<area shape="rect" id="node1" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="11,5,194,32"/>
+<area shape="rect" id="node8" title=" " alt="" coords="5,124,155,165"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_m_c_particle_obj.html" title=" " alt="" coords="168,243,336,269"/>
+<area shape="rect" id="node3" title=" " alt="" coords="267,131,339,158"/>
+<area shape="rect" id="node4" href="$classedm4hep_1_1_m_c_particle_data.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="363,131,539,158"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="226,5,361,32"/>
+<area shape="rect" id="node6" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="385,5,517,32"/>
+<area shape="rect" id="node7" href="$classedm4hep_1_1_vector2i.html" title=" " alt="" coords="545,5,676,32"/>
 </map>

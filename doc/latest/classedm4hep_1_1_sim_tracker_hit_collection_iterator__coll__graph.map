@@ -1,16 +1,16 @@
 <map id="edm4hep::SimTrackerHitCollectionIterator" name="edm4hep::SimTrackerHitCollectionIterator">
-<area shape="rect" id="node1" title=" " alt="" coords="387,588,633,629"/>
-<area shape="rect" id="node2" href="$classedm4hep_1_1_sim_tracker_hit.html" title="Simulated tracker hit." alt="" coords="329,499,512,525"/>
-<area shape="rect" id="node3" href="$classedm4hep_1_1_sim_tracker_hit_obj.html" title=" " alt="" coords="319,402,523,429"/>
-<area shape="rect" id="node4" title=" " alt="" coords="339,124,415,151"/>
-<area shape="rect" id="node9" href="$classedm4hep_1_1_m_c_particle_obj.html" title=" " alt="" coords="171,213,353,240"/>
-<area shape="rect" id="node5" href="$classedm4hep_1_1_sim_tracker_hit_data.html" title="Simulated tracker hit." alt="" coords="439,124,653,151"/>
-<area shape="rect" id="node6" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="492,5,640,32"/>
-<area shape="rect" id="node10" href="$classedm4hep_1_1_m_c_particle_data.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="124,124,315,151"/>
-<area shape="rect" id="node7" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="288,5,433,32"/>
-<area shape="rect" id="node8" href="$classedm4hep_1_1_const_m_c_particle.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="163,304,359,331"/>
-<area shape="rect" id="node12" title=" " alt="" coords="5,395,172,436"/>
-<area shape="rect" id="node11" href="$classedm4hep_1_1_vector2i.html" title=" " alt="" coords="50,5,194,32"/>
-<area shape="rect" id="node13" title="STL class." alt="" coords="537,499,665,525"/>
-<area shape="rect" id="node14" title=" " alt="" coords="581,402,620,429"/>
+<area shape="rect" id="node1" title=" " alt="" coords="353,588,578,629"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_sim_tracker_hit.html" title="Simulated tracker hit." alt="" coords="299,499,466,525"/>
+<area shape="rect" id="node3" href="$classedm4hep_1_1_sim_tracker_hit_obj.html" title=" " alt="" coords="289,402,476,429"/>
+<area shape="rect" id="node4" title=" " alt="" coords="320,124,392,151"/>
+<area shape="rect" id="node9" href="$classedm4hep_1_1_m_c_particle_obj.html" title=" " alt="" coords="137,213,305,240"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_sim_tracker_hit_data.html" title="Simulated tracker hit." alt="" coords="416,124,611,151"/>
+<area shape="rect" id="node6" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="438,5,573,32"/>
+<area shape="rect" id="node10" href="$classedm4hep_1_1_m_c_particle_data.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="120,124,296,151"/>
+<area shape="rect" id="node7" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="263,5,395,32"/>
+<area shape="rect" id="node8" href="$classedm4hep_1_1_const_m_c_particle.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="162,304,345,331"/>
+<area shape="rect" id="node12" title=" " alt="" coords="5,395,155,436"/>
+<area shape="rect" id="node11" href="$classedm4hep_1_1_vector2i.html" title=" " alt="" coords="51,5,181,32"/>
+<area shape="rect" id="node13" title="STL class." alt="" coords="491,499,605,525"/>
+<area shape="rect" id="node14" title=" " alt="" coords="529,402,567,429"/>
 </map>

@@ -1,11 +1,11 @@
 <map id="edm4hep::MCParticle" name="edm4hep::MCParticle">
-<area shape="rect" id="node1" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="5,304,164,331"/>
-<area shape="rect" id="node2" href="$classedm4hep_1_1_m_c_particle_obj.html" title=" " alt="" coords="195,213,377,240"/>
-<area shape="rect" id="node9" href="$classedm4hep_1_1_const_m_c_particle.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="188,304,384,331"/>
-<area shape="rect" id="node3" title=" " alt="" coords="248,124,324,151"/>
-<area shape="rect" id="node4" href="$classedm4hep_1_1_m_c_particle_data.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="348,124,539,151"/>
-<area shape="rect" id="node5" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="199,5,347,32"/>
-<area shape="rect" id="node6" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="371,5,516,32"/>
-<area shape="rect" id="node7" href="$classedm4hep_1_1_vector2i.html" title=" " alt="" coords="550,5,694,32"/>
-<area shape="rect" id="node8" title=" " alt="" coords="276,395,443,436"/>
+<area shape="rect" id="node1" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="5,304,153,331"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_m_c_particle_obj.html" title=" " alt="" coords="185,213,353,240"/>
+<area shape="rect" id="node9" href="$classedm4hep_1_1_const_m_c_particle.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="177,304,360,331"/>
+<area shape="rect" id="node3" title=" " alt="" coords="211,124,283,151"/>
+<area shape="rect" id="node4" href="$classedm4hep_1_1_m_c_particle_data.html" title="The Monte Carlo particle &#45; based on the lcio::MCParticle." alt="" coords="307,124,483,151"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_vector3d.html" title=" " alt="" coords="171,5,305,32"/>
+<area shape="rect" id="node6" href="$classedm4hep_1_1_vector3f.html" title=" " alt="" coords="329,5,461,32"/>
+<area shape="rect" id="node7" href="$classedm4hep_1_1_vector2i.html" title=" " alt="" coords="490,5,621,32"/>
+<area shape="rect" id="node8" title=" " alt="" coords="265,395,414,436"/>
 </map>

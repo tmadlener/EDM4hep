@@ -1,4 +1,13 @@
 <map id="edm4hep/src/TrackerHitObj.cc" name="edm4hep/src/TrackerHitObj.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,221,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="52,80,175,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="188,5,388,32"/>
+<area shape="rect" id="node2" href="$_tracker_hit_obj_8h.html" title=" " alt="" coords="203,80,373,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,67,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="224,304,296,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="142,155,261,181"/>
+<area shape="rect" id="node6" href="$_tracker_hit_data_8h.html" title=" " alt="" coords="285,155,464,181"/>
+<area shape="rect" id="node9" href="$_object_i_d_8h.html" title=" " alt="" coords="489,155,631,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="656,155,715,181"/>
+<area shape="rect" id="node7" href="$_vector3d_8h.html" title=" " alt="" coords="189,229,331,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="356,229,407,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="500,229,620,256"/>
 </map>
