@@ -1,7 +1,9 @@
 <map id="install/include/edm4hep/MCRecoCaloAssociation.h" name="install/include/edm4hep/MCRecoCaloAssociation.h">
-<area shape="rect" id="node1" title=" " alt="" coords="349,5,542,47"/>
-<area shape="rect" id="node2" href="$_m_c_reco_calo_association_8cc.html" title=" " alt="" coords="5,191,288,218"/>
-<area shape="rect" id="node3" href="$_m_c_reco_calo_association_const_8cc.html" title=" " alt="" coords="602,184,867,225"/>
-<area shape="rect" id="node4" href="$install_2include_2edm4hep_2_m_c_reco_calo_association_collection_8h.html" title=" " alt="" coords="316,95,575,136"/>
-<area shape="rect" id="node5" href="$_m_c_reco_calo_association_collection_8cc.html" title=" " alt="" coords="313,184,578,225"/>
+<area shape="rect" id="node1" title=" " alt="" coords="392,5,585,47"/>
+<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_m_c_reco_calo_association_collection_8h.html" title=" " alt="" coords="81,95,313,136"/>
+<area shape="rect" id="node4" href="$_m_c_reco_calo_association_8cc.html" title=" " alt="" coords="231,191,514,218"/>
+<area shape="rect" id="node5" href="$_m_c_reco_calo_association_const_8cc.html" title=" " alt="" coords="828,184,1093,225"/>
+<area shape="rect" id="node6" href="$install_2include_2edm4hep_2_m_c_reco_calo_association_collection_8h.html" title=" " alt="" coords="509,95,767,136"/>
+<area shape="rect" id="node3" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="5,191,207,218"/>
+<area shape="rect" id="node7" href="$_m_c_reco_calo_association_collection_8cc.html" title=" " alt="" coords="539,184,804,225"/>
 </map>

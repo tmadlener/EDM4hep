@@ -1,11 +1,4 @@
 <map id="edm4hep/edm4hep/TrackState.h" name="edm4hep/edm4hep/TrackState.h">
-<area shape="rect" id="node1" title=" " alt="" coords="403,5,635,32"/>
-<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_track_8h.html" title=" " alt="" coords="260,155,459,181"/>
-<area shape="rect" id="node6" href="$edm4hep_2edm4hep_2_track_const_8h.html" title=" " alt="" coords="397,237,631,263"/>
-<area shape="rect" id="node9" href="$edm4hep_2edm4hep_2_track_obj_8h.html" title=" " alt="" coords="557,80,777,107"/>
-<area shape="rect" id="node3" href="$edm4hep_2edm4hep_2_reconstructed_particle_8h.html" title=" " alt="" coords="128,319,372,360"/>
-<area shape="rect" id="node4" href="$edm4hep_2edm4hep_2_reconstructed_particle_const_8h.html" title=" " alt="" coords="5,408,249,449"/>
-<area shape="rect" id="node7" href="$edm4hep_2edm4hep_2_reconstructed_particle_obj_8h.html" title=" " alt="" coords="77,229,321,271"/>
-<area shape="rect" id="node8" href="$edm4hep_2edm4hep_2_track_collection_8h.html" title=" " alt="" coords="656,237,919,263"/>
-<area shape="rect" id="node5" href="$edm4hep_2edm4hep_2_reconstructed_particle_collection_8h.html" title=" " alt="" coords="292,408,536,449"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,237,32"/>
+<area shape="rect" id="node2" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="21,80,222,107"/>
 </map>

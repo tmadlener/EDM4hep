@@ -1,8 +1,11 @@
 <map id="install/include/edm4hep/TPCHitConst.h" name="install/include/edm4hep/TPCHitConst.h">
-<area shape="rect" id="node1" title=" " alt="" coords="231,5,410,47"/>
-<area shape="rect" id="node2" href="$_t_p_c_hit_8cc.html" title=" " alt="" coords="5,273,177,300"/>
-<area shape="rect" id="node3" href="$_t_p_c_hit_const_8cc.html" title=" " alt="" coords="464,273,673,300"/>
-<area shape="rect" id="node4" href="$install_2include_2edm4hep_2_t_p_c_hit_8h.html" title=" " alt="" coords="231,95,410,136"/>
-<area shape="rect" id="node5" href="$install_2include_2edm4hep_2_t_p_c_hit_collection_8h.html" title=" " alt="" coords="231,184,410,225"/>
-<area shape="rect" id="node6" href="$_t_p_c_hit_collection_8cc.html" title=" " alt="" coords="202,273,439,300"/>
+<area shape="rect" id="node1" title=" " alt="" coords="336,5,515,47"/>
+<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_t_p_c_hit_8h.html" title=" " alt="" coords="5,102,213,129"/>
+<area shape="rect" id="node4" href="$_t_p_c_hit_8cc.html" title=" " alt="" coords="818,273,990,300"/>
+<area shape="rect" id="node5" href="$_t_p_c_hit_const_8cc.html" title=" " alt="" coords="322,273,531,300"/>
+<area shape="rect" id="node6" href="$install_2include_2edm4hep_2_t_p_c_hit_8h.html" title=" " alt="" coords="511,95,689,136"/>
+<area shape="rect" id="node3" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="75,273,277,300"/>
+<area shape="rect" id="node7" href="$edm4hep_2edm4hep_2_t_p_c_hit_collection_8h.html" title=" " alt="" coords="289,191,562,218"/>
+<area shape="rect" id="node8" href="$install_2include_2edm4hep_2_t_p_c_hit_collection_8h.html" title=" " alt="" coords="637,184,816,225"/>
+<area shape="rect" id="node9" href="$_t_p_c_hit_collection_8cc.html" title=" " alt="" coords="556,273,793,300"/>
 </map>

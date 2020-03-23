@@ -1,7 +1,9 @@
 <map id="install/include/edm4hep/MCRecoTrackerAssociation.h" name="install/include/edm4hep/MCRecoTrackerAssociation.h">
-<area shape="rect" id="node1" title=" " alt="" coords="236,5,447,47"/>
-<area shape="rect" id="node2" href="$_m_c_reco_tracker_association_8cc.html" title=" " alt="" coords="5,184,213,225"/>
-<area shape="rect" id="node3" href="$_m_c_reco_tracker_association_const_8cc.html" title=" " alt="" coords="469,184,677,225"/>
-<area shape="rect" id="node4" href="$install_2include_2edm4hep_2_m_c_reco_tracker_association_collection_8h.html" title=" " alt="" coords="203,95,479,136"/>
-<area shape="rect" id="node5" href="$_m_c_reco_tracker_association_collection_8cc.html" title=" " alt="" coords="237,184,445,225"/>
+<area shape="rect" id="node1" title=" " alt="" coords="331,5,542,47"/>
+<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_m_c_reco_tracker_association_collection_8h.html" title=" " alt="" coords="27,95,278,136"/>
+<area shape="rect" id="node4" href="$_m_c_reco_tracker_association_8cc.html" title=" " alt="" coords="231,184,439,225"/>
+<area shape="rect" id="node5" href="$_m_c_reco_tracker_association_const_8cc.html" title=" " alt="" coords="695,184,903,225"/>
+<area shape="rect" id="node6" href="$install_2include_2edm4hep_2_m_c_reco_tracker_association_collection_8h.html" title=" " alt="" coords="415,95,691,136"/>
+<area shape="rect" id="node3" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="5,191,207,218"/>
+<area shape="rect" id="node7" href="$_m_c_reco_tracker_association_collection_8cc.html" title=" " alt="" coords="463,184,671,225"/>
 </map>

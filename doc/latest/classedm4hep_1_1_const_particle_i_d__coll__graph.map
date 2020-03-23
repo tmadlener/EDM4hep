@@ -1,7 +1,7 @@
 <map id="edm4hep::ConstParticleID" name="edm4hep::ConstParticleID">
-<area shape="rect" id="node1" title="ParticleID." alt="" coords="99,184,275,211"/>
-<area shape="rect" id="node2" href="$classedm4hep_1_1_particle_i_d_obj.html" title=" " alt="" coords="106,95,267,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,77,32"/>
-<area shape="rect" id="node4" href="$classedm4hep_1_1_particle_i_d_data.html" title="ParticleID." alt="" coords="102,5,271,32"/>
-<area shape="rect" id="node5" title=" " alt="" coords="296,5,429,32"/>
+<area shape="rect" id="node1" title="ParticleID." alt="" coords="25,184,216,211"/>
+<area shape="rect" id="node2" href="$classedm4hep_1_1_particle_i_d_obj.html" title=" " alt="" coords="33,95,208,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,81,32"/>
+<area shape="rect" id="node4" href="$classedm4hep_1_1_particle_i_d_data.html" title="ParticleID." alt="" coords="106,5,290,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="315,5,465,32"/>
 </map>

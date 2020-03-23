@@ -1,13 +1,11 @@
 <map id="edm4hep/edm4hep/CaloHitContribution.h" name="edm4hep/edm4hep/CaloHitContribution.h">
-<area shape="rect" id="node1" title=" " alt="" coords="193,5,485,32"/>
-<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_vector3f_8h.html" title=" " alt="" coords="231,304,318,331"/>
-<area shape="rect" id="node3" title=" " alt="" coords="235,379,315,405"/>
-<area shape="rect" id="node4" href="$edm4hep_2edm4hep_2_calo_hit_contribution_data_8h.html" title=" " alt="" coords="43,229,237,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="109,155,171,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="381,80,456,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="297,155,428,181"/>
-<area shape="rect" id="node8" href="$edm4hep_2edm4hep_2_calo_hit_contribution_const_8h.html" title=" " alt="" coords="159,80,358,107"/>
-<area shape="rect" id="node9" href="$edm4hep_2edm4hep_2_calo_hit_contribution_obj_8h.html" title=" " alt="" coords="452,155,636,181"/>
-<area shape="rect" id="node10" title=" " alt="" coords="339,229,405,256"/>
-<area shape="rect" id="node11" title=" " alt="" coords="429,229,557,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="453,5,745,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,220,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="245,87,397,114"/>
+<area shape="rect" id="node4" title=" " alt="" coords="421,87,484,114"/>
+<area shape="rect" id="node5" title=" " alt="" coords="509,87,589,114"/>
+<area shape="rect" id="node6" title=" " alt="" coords="613,87,687,114"/>
+<area shape="rect" id="node7" title=" " alt="" coords="711,87,842,114"/>
+<area shape="rect" id="node8" title=" " alt="" coords="867,80,1081,121"/>
+<area shape="rect" id="node9" title=" " alt="" coords="1105,80,1320,121"/>
 </map>

@@ -1,8 +1,11 @@
 <map id="install/include/edm4hep/MCRecoParticleAssociationConst.h" name="install/include/edm4hep/MCRecoParticleAssociationConst.h">
-<area shape="rect" id="node1" title=" " alt="" coords="219,5,468,47"/>
-<area shape="rect" id="node2" href="$_m_c_reco_particle_association_8cc.html" title=" " alt="" coords="5,273,215,315"/>
-<area shape="rect" id="node3" href="$_m_c_reco_particle_association_const_8cc.html" title=" " alt="" coords="472,273,681,315"/>
-<area shape="rect" id="node4" href="$install_2include_2edm4hep_2_m_c_reco_particle_association_8h.html" title=" " alt="" coords="237,95,449,136"/>
-<area shape="rect" id="node5" href="$install_2include_2edm4hep_2_m_c_reco_particle_association_collection_8h.html" title=" " alt="" coords="205,184,482,225"/>
-<area shape="rect" id="node6" href="$_m_c_reco_particle_association_collection_8cc.html" title=" " alt="" coords="239,273,448,315"/>
+<area shape="rect" id="node1" title=" " alt="" coords="331,5,581,47"/>
+<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_m_c_reco_particle_association_8h.html" title=" " alt="" coords="5,95,256,136"/>
+<area shape="rect" id="node4" href="$_m_c_reco_particle_association_8cc.html" title=" " alt="" coords="917,273,1126,315"/>
+<area shape="rect" id="node5" href="$_m_c_reco_particle_association_const_8cc.html" title=" " alt="" coords="450,273,659,315"/>
+<area shape="rect" id="node6" href="$install_2include_2edm4hep_2_m_c_reco_particle_association_8h.html" title=" " alt="" coords="513,95,725,136"/>
+<area shape="rect" id="node3" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="127,281,329,307"/>
+<area shape="rect" id="node7" href="$edm4hep_2edm4hep_2_m_c_reco_particle_association_collection_8h.html" title=" " alt="" coords="331,184,581,225"/>
+<area shape="rect" id="node8" href="$install_2include_2edm4hep_2_m_c_reco_particle_association_collection_8h.html" title=" " alt="" coords="656,184,933,225"/>
+<area shape="rect" id="node9" href="$_m_c_reco_particle_association_collection_8cc.html" title=" " alt="" coords="683,273,893,315"/>
 </map>

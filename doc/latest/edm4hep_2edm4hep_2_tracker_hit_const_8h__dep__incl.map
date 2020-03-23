@@ -1,13 +1,4 @@
 <map id="edm4hep/edm4hep/TrackerHitConst.h" name="edm4hep/edm4hep/TrackerHitConst.h">
-<area shape="rect" id="node1" title=" " alt="" coords="483,5,702,47"/>
-<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_tracker_hit_8h.html" title=" " alt="" coords="477,95,708,121"/>
-<area shape="rect" id="node3" href="$edm4hep_2edm4hep_2_track_8h.html" title=" " alt="" coords="260,259,459,285"/>
-<area shape="rect" id="node7" href="$edm4hep_2edm4hep_2_track_const_8h.html" title=" " alt="" coords="397,341,631,367"/>
-<area shape="rect" id="node10" href="$edm4hep_2edm4hep_2_track_obj_8h.html" title=" " alt="" coords="557,177,777,203"/>
-<area shape="rect" id="node11" href="$edm4hep_2edm4hep_2_tracker_hit_collection_8h.html" title=" " alt="" coords="802,169,1021,211"/>
-<area shape="rect" id="node4" href="$edm4hep_2edm4hep_2_reconstructed_particle_8h.html" title=" " alt="" coords="128,423,372,464"/>
-<area shape="rect" id="node5" href="$edm4hep_2edm4hep_2_reconstructed_particle_const_8h.html" title=" " alt="" coords="5,512,249,553"/>
-<area shape="rect" id="node8" href="$edm4hep_2edm4hep_2_reconstructed_particle_obj_8h.html" title=" " alt="" coords="77,333,321,375"/>
-<area shape="rect" id="node9" href="$edm4hep_2edm4hep_2_track_collection_8h.html" title=" " alt="" coords="656,341,919,367"/>
-<area shape="rect" id="node6" href="$edm4hep_2edm4hep_2_reconstructed_particle_collection_8h.html" title=" " alt="" coords="292,512,536,553"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,224,47"/>
+<area shape="rect" id="node2" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="14,95,215,121"/>
 </map>

@@ -1,23 +1,8 @@
 var searchData=
 [
-  ['mcparticle',['MCParticle',['../classedm4hep_1_1_m_c_particle.html',1,'edm4hep']]],
-  ['mcparticlecollection',['MCParticleCollection',['../classedm4hep_1_1_m_c_particle_collection.html',1,'edm4hep']]],
-  ['mcparticlecollectioniterator',['MCParticleCollectionIterator',['../classedm4hep_1_1_m_c_particle_collection_iterator.html',1,'edm4hep']]],
-  ['mcparticledata',['MCParticleData',['../classedm4hep_1_1_m_c_particle_data.html',1,'edm4hep']]],
-  ['mcparticleobj',['MCParticleObj',['../classedm4hep_1_1_m_c_particle_obj.html',1,'edm4hep']]],
-  ['mcrecocaloassociation',['MCRecoCaloAssociation',['../classedm4hep_1_1_m_c_reco_calo_association.html',1,'edm4hep']]],
-  ['mcrecocaloassociationcollection',['MCRecoCaloAssociationCollection',['../classedm4hep_1_1_m_c_reco_calo_association_collection.html',1,'edm4hep']]],
-  ['mcrecocaloassociationcollectioniterator',['MCRecoCaloAssociationCollectionIterator',['../classedm4hep_1_1_m_c_reco_calo_association_collection_iterator.html',1,'edm4hep']]],
-  ['mcrecocaloassociationdata',['MCRecoCaloAssociationData',['../classedm4hep_1_1_m_c_reco_calo_association_data.html',1,'edm4hep']]],
-  ['mcrecocaloassociationobj',['MCRecoCaloAssociationObj',['../classedm4hep_1_1_m_c_reco_calo_association_obj.html',1,'edm4hep']]],
-  ['mcrecoparticleassociation',['MCRecoParticleAssociation',['../classedm4hep_1_1_m_c_reco_particle_association.html',1,'edm4hep']]],
-  ['mcrecoparticleassociationcollection',['MCRecoParticleAssociationCollection',['../classedm4hep_1_1_m_c_reco_particle_association_collection.html',1,'edm4hep']]],
-  ['mcrecoparticleassociationcollectioniterator',['MCRecoParticleAssociationCollectionIterator',['../classedm4hep_1_1_m_c_reco_particle_association_collection_iterator.html',1,'edm4hep']]],
-  ['mcrecoparticleassociationdata',['MCRecoParticleAssociationData',['../classedm4hep_1_1_m_c_reco_particle_association_data.html',1,'edm4hep']]],
-  ['mcrecoparticleassociationobj',['MCRecoParticleAssociationObj',['../classedm4hep_1_1_m_c_reco_particle_association_obj.html',1,'edm4hep']]],
-  ['mcrecotrackerassociation',['MCRecoTrackerAssociation',['../classedm4hep_1_1_m_c_reco_tracker_association.html',1,'edm4hep']]],
-  ['mcrecotrackerassociationcollection',['MCRecoTrackerAssociationCollection',['../classedm4hep_1_1_m_c_reco_tracker_association_collection.html',1,'edm4hep']]],
-  ['mcrecotrackerassociationcollectioniterator',['MCRecoTrackerAssociationCollectionIterator',['../classedm4hep_1_1_m_c_reco_tracker_association_collection_iterator.html',1,'edm4hep']]],
-  ['mcrecotrackerassociationdata',['MCRecoTrackerAssociationData',['../classedm4hep_1_1_m_c_reco_tracker_association_data.html',1,'edm4hep']]],
-  ['mcrecotrackerassociationobj',['MCRecoTrackerAssociationObj',['../classedm4hep_1_1_m_c_reco_tracker_association_obj.html',1,'edm4hep']]]
+  ['eventheader',['EventHeader',['../classedm4hep_1_1_event_header.html',1,'edm4hep']]],
+  ['eventheadercollection',['EventHeaderCollection',['../classedm4hep_1_1_event_header_collection.html',1,'edm4hep']]],
+  ['eventheadercollectioniterator',['EventHeaderCollectionIterator',['../classedm4hep_1_1_event_header_collection_iterator.html',1,'edm4hep']]],
+  ['eventheaderdata',['EventHeaderData',['../classedm4hep_1_1_event_header_data.html',1,'edm4hep']]],
+  ['eventheaderobj',['EventHeaderObj',['../classedm4hep_1_1_event_header_obj.html',1,'edm4hep']]]
 ];

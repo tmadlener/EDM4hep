@@ -1,11 +1,8 @@
 <map id="edm4hep/edm4hep/MCParticleObj.h" name="edm4hep/edm4hep/MCParticleObj.h">
-<area shape="rect" id="node1" title=" " alt="" coords="101,5,321,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="154,5,374,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,72,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="237,244,317,271"/>
-<area shape="rect" id="node4" title=" " alt="" coords="147,95,275,121"/>
-<area shape="rect" id="node5" href="$edm4hep_2edm4hep_2_m_c_particle_data_8h.html" title=" " alt="" coords="299,95,432,121"/>
-<area shape="rect" id="node9" title=" " alt="" coords="457,95,519,121"/>
-<area shape="rect" id="node6" href="$edm4hep_2edm4hep_2_vector3d_8h.html" title=" " alt="" coords="176,169,267,196"/>
-<area shape="rect" id="node7" href="$edm4hep_2edm4hep_2_vector3f_8h.html" title=" " alt="" coords="291,169,378,196"/>
-<area shape="rect" id="node8" href="$edm4hep_2edm4hep_2_vector2i_8h.html" title=" " alt="" coords="402,169,489,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="96,95,176,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="200,95,328,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="353,95,551,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="575,95,638,121"/>
 </map>

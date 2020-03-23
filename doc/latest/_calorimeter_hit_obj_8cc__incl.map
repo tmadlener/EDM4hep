@@ -1,9 +1,4 @@
 <map id="edm4hep/src/CalorimeterHitObj.cc" name="edm4hep/src/CalorimeterHitObj.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="59,5,245,47"/>
-<area shape="rect" id="node2" href="$_calorimeter_hit_obj_8h.html" title=" " alt="" coords="55,95,249,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,169,67,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="121,319,193,345"/>
-<area shape="rect" id="node5" title=" " alt="" coords="142,169,261,196"/>
-<area shape="rect" id="node6" href="$_calorimeter_hit_data_8h.html" title=" " alt="" coords="285,169,488,196"/>
-<area shape="rect" id="node7" href="$_vector3f_8h.html" title=" " alt="" coords="229,244,368,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="11,5,217,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,223,121"/>
 </map>

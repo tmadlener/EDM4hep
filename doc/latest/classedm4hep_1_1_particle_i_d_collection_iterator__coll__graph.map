@@ -1,9 +1,9 @@
 <map id="edm4hep::ParticleIDCollectionIterator" name="edm4hep::ParticleIDCollectionIterator">
-<area shape="rect" id="node1" title=" " alt="" coords="98,273,297,315"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,184,200,211"/>
-<area shape="rect" id="node3" href="$classedm4hep_1_1_particle_i_d_obj.html" title=" " alt="" coords="118,95,279,121"/>
-<area shape="rect" id="node7" href="$classedm4hep_1_1_particle_i_d.html" title="ParticleID." alt="" coords="224,184,365,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="17,5,89,32"/>
-<area shape="rect" id="node5" href="$classedm4hep_1_1_particle_i_d_data.html" title="ParticleID." alt="" coords="114,5,283,32"/>
-<area shape="rect" id="node6" title=" " alt="" coords="308,5,441,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="106,273,325,315"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,184,220,211"/>
+<area shape="rect" id="node3" href="$classedm4hep_1_1_particle_i_d_obj.html" title=" " alt="" coords="129,95,304,121"/>
+<area shape="rect" id="node7" href="$classedm4hep_1_1_particle_i_d.html" title="ParticleID." alt="" coords="244,184,397,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="101,5,177,32"/>
+<area shape="rect" id="node5" href="$classedm4hep_1_1_particle_i_d_data.html" title="ParticleID." alt="" coords="202,5,386,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="411,5,561,32"/>
 </map>

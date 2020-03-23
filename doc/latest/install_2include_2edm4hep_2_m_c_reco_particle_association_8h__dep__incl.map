@@ -1,7 +1,9 @@
 <map id="install/include/edm4hep/MCRecoParticleAssociation.h" name="install/include/edm4hep/MCRecoParticleAssociation.h">
-<area shape="rect" id="node1" title=" " alt="" coords="237,5,449,47"/>
-<area shape="rect" id="node2" href="$_m_c_reco_particle_association_8cc.html" title=" " alt="" coords="5,184,215,225"/>
-<area shape="rect" id="node3" href="$_m_c_reco_particle_association_const_8cc.html" title=" " alt="" coords="472,184,681,225"/>
-<area shape="rect" id="node4" href="$install_2include_2edm4hep_2_m_c_reco_particle_association_collection_8h.html" title=" " alt="" coords="205,95,482,136"/>
-<area shape="rect" id="node5" href="$_m_c_reco_particle_association_collection_8cc.html" title=" " alt="" coords="239,184,448,225"/>
+<area shape="rect" id="node1" title=" " alt="" coords="345,5,557,47"/>
+<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_m_c_reco_particle_association_collection_8h.html" title=" " alt="" coords="14,95,265,136"/>
+<area shape="rect" id="node4" href="$_m_c_reco_particle_association_8cc.html" title=" " alt="" coords="231,184,440,225"/>
+<area shape="rect" id="node5" href="$_m_c_reco_particle_association_const_8cc.html" title=" " alt="" coords="697,184,907,225"/>
+<area shape="rect" id="node6" href="$install_2include_2edm4hep_2_m_c_reco_particle_association_collection_8h.html" title=" " alt="" coords="415,95,693,136"/>
+<area shape="rect" id="node3" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="5,191,207,218"/>
+<area shape="rect" id="node7" href="$_m_c_reco_particle_association_collection_8cc.html" title=" " alt="" coords="464,184,673,225"/>
 </map>

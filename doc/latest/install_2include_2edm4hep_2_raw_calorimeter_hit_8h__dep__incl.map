@@ -1,7 +1,9 @@
 <map id="install/include/edm4hep/RawCalorimeterHit.h" name="install/include/edm4hep/RawCalorimeterHit.h">
-<area shape="rect" id="node1" title=" " alt="" coords="262,5,441,47"/>
-<area shape="rect" id="node2" href="$_raw_calorimeter_hit_8cc.html" title=" " alt="" coords="5,184,220,225"/>
-<area shape="rect" id="node3" href="$_raw_calorimeter_hit_const_8cc.html" title=" " alt="" coords="483,184,697,225"/>
-<area shape="rect" id="node4" href="$install_2include_2edm4hep_2_raw_calorimeter_hit_collection_8h.html" title=" " alt="" coords="238,95,465,136"/>
-<area shape="rect" id="node5" href="$_raw_calorimeter_hit_collection_8cc.html" title=" " alt="" coords="244,184,459,225"/>
+<area shape="rect" id="node1" title=" " alt="" coords="345,5,523,47"/>
+<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_raw_calorimeter_hit_collection_8h.html" title=" " alt="" coords="32,95,289,136"/>
+<area shape="rect" id="node4" href="$_raw_calorimeter_hit_8cc.html" title=" " alt="" coords="231,184,445,225"/>
+<area shape="rect" id="node5" href="$_raw_calorimeter_hit_const_8cc.html" title=" " alt="" coords="708,184,923,225"/>
+<area shape="rect" id="node6" href="$install_2include_2edm4hep_2_raw_calorimeter_hit_collection_8h.html" title=" " alt="" coords="441,95,667,136"/>
+<area shape="rect" id="node3" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="5,191,207,218"/>
+<area shape="rect" id="node7" href="$_raw_calorimeter_hit_collection_8cc.html" title=" " alt="" coords="469,184,684,225"/>
 </map>

@@ -1,11 +1,7 @@
 <map id="install/include/edm4hep/EventHeaderConst.h" name="install/include/edm4hep/EventHeaderConst.h">
-<area shape="rect" id="node1" title=" " alt="" coords="13,5,191,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="9,244,67,271"/>
-<area shape="rect" id="node3" href="$install_2include_2edm4hep_2_event_header_data_8h.html" title=" " alt="" coords="19,169,169,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="71,95,133,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="158,95,289,121"/>
-<area shape="rect" id="node6" href="$install_2include_2edm4hep_2_event_header_obj_8h.html" title=" " alt="" coords="313,95,453,121"/>
-<area shape="rect" id="node7" title=" " alt="" coords="253,169,319,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="343,169,423,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="447,169,575,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="246,5,425,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,220,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="244,95,307,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="331,95,462,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="486,95,691,121"/>
 </map>

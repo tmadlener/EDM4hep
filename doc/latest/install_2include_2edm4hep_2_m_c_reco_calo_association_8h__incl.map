@@ -1,12 +1,10 @@
 <map id="install/include/edm4hep/MCRecoCaloAssociation.h" name="install/include/edm4hep/MCRecoCaloAssociation.h">
-<area shape="rect" id="node1" title=" " alt="" coords="270,5,464,47"/>
-<area shape="rect" id="node2" href="$install_2include_2edm4hep_2_m_c_reco_calo_association_data_8h.html" title=" " alt="" coords="20,244,240,271"/>
-<area shape="rect" id="node3" title=" " alt="" coords="29,169,92,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="526,244,606,271"/>
-<area shape="rect" id="node5" title=" " alt="" coords="330,95,404,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="167,169,298,196"/>
-<area shape="rect" id="node7" href="$install_2include_2edm4hep_2_m_c_reco_calo_association_const_8h.html" title=" " alt="" coords="79,95,306,121"/>
-<area shape="rect" id="node8" href="$install_2include_2edm4hep_2_m_c_reco_calo_association_obj_8h.html" title=" " alt="" coords="322,169,532,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="276,244,343,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="367,244,495,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="405,5,598,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,248,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="273,102,335,129"/>
+<area shape="rect" id="node4" title=" " alt="" coords="360,102,440,129"/>
+<area shape="rect" id="node5" title=" " alt="" coords="464,102,539,129"/>
+<area shape="rect" id="node6" title=" " alt="" coords="563,102,693,129"/>
+<area shape="rect" id="node7" title=" " alt="" coords="717,95,960,136"/>
+<area shape="rect" id="node8" title=" " alt="" coords="984,95,1227,136"/>
 </map>

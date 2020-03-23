@@ -1,0 +1,7 @@
+<map id="dd4hep::sim::Geant4Output2EDM4hep" name="dd4hep::sim::Geant4Output2EDM4hep">
+<area shape="rect" id="node1" title="Base class to output Geant4 event data to EDM4hep." alt="" coords="34,348,243,389"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,207,160,234"/>
+<area shape="rect" id="node3" title=" " alt="" coords="184,200,347,241"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="222,96,309,123"/>
+<area shape="rect" id="node5" title="STL class." alt="" coords="196,5,335,47"/>
+</map>

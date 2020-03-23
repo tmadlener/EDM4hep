@@ -1,7 +1,4 @@
 <map id="edm4hep/edm4hep/ReconstructedParticleData.h" name="edm4hep/edm4hep/ReconstructedParticleData.h">
-<area shape="rect" id="node1" title=" " alt="" coords="181,5,425,47"/>
-<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_reconstructed_particle_8h.html" title=" " alt="" coords="127,184,371,225"/>
-<area shape="rect" id="node3" href="$edm4hep_2edm4hep_2_reconstructed_particle_const_8h.html" title=" " alt="" coords="5,273,249,315"/>
-<area shape="rect" id="node4" href="$edm4hep_2edm4hep_2_reconstructed_particle_collection_8h.html" title=" " alt="" coords="311,273,555,315"/>
-<area shape="rect" id="node5" href="$edm4hep_2edm4hep_2_reconstructed_particle_obj_8h.html" title=" " alt="" coords="101,95,345,136"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,249,47"/>
+<area shape="rect" id="node2" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="27,95,228,121"/>
 </map>

@@ -1,7 +1,6 @@
 <map id="install/include/edm4hep/MCParticleData.h" name="install/include/edm4hep/MCParticleData.h">
-<area shape="rect" id="node1" title=" " alt="" coords="75,5,253,47"/>
-<area shape="rect" id="node2" href="$install_2include_2edm4hep_2_vector3d_8h.html" title=" " alt="" coords="5,95,96,121"/>
-<area shape="rect" id="node4" href="$install_2include_2edm4hep_2_vector3f_8h.html" title=" " alt="" coords="121,95,207,121"/>
-<area shape="rect" id="node5" href="$install_2include_2edm4hep_2_vector2i_8h.html" title=" " alt="" coords="231,95,318,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="124,169,204,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="171,5,349,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,157,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="182,95,338,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="363,95,515,121"/>
 </map>

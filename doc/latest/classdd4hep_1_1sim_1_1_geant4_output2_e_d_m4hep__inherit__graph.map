@@ -1,0 +1,4 @@
+<map id="dd4hep::sim::Geant4Output2EDM4hep" name="dd4hep::sim::Geant4Output2EDM4hep">
+<area shape="rect" id="node1" title="Base class to output Geant4 event data to EDM4hep." alt="" coords="5,80,215,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="33,5,187,32"/>
+</map>

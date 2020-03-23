@@ -1,12 +1,12 @@
 <map id="edm4hep::TPCHitCollection" name="edm4hep::TPCHitCollection">
-<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="960,108,1145,135"/>
-<area shape="rect" id="node2" title=" " alt="" coords="705,5,816,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="488,101,647,142"/>
-<area shape="rect" id="node4" title=" " alt="" coords="21,107,144,133"/>
-<area shape="rect" id="node6" href="$classedm4hep_1_1_t_p_c_hit_obj.html" title=" " alt="" coords="317,169,464,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="671,169,851,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="47,196,119,223"/>
-<area shape="rect" id="node8" href="$classedm4hep_1_1_t_p_c_hit_data.html" title="Time Projection Chamber Hit." alt="" coords="5,247,160,273"/>
-<area shape="rect" id="node9" title="STL class." alt="" coords="703,220,819,247"/>
-<area shape="rect" id="node10" title=" " alt="" coords="371,220,410,247"/>
+<area shape="rect" id="node1" title="A Collection is identified by an ID." alt="" coords="1035,83,1235,109"/>
+<area shape="rect" id="node2" title=" " alt="" coords="759,5,878,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="521,101,696,142"/>
+<area shape="rect" id="node4" title=" " alt="" coords="19,107,158,133"/>
+<area shape="rect" id="node6" href="$classedm4hep_1_1_t_p_c_hit_obj.html" title=" " alt="" coords="340,203,497,229"/>
+<area shape="rect" id="node5" title=" " alt="" coords="720,179,917,205"/>
+<area shape="rect" id="node7" title=" " alt="" coords="51,208,127,235"/>
+<area shape="rect" id="node8" href="$classedm4hep_1_1_t_p_c_hit_data.html" title="Time Projection Chamber Hit." alt="" coords="5,259,172,285"/>
+<area shape="rect" id="node9" title="STL class." alt="" coords="754,248,883,275"/>
+<area shape="rect" id="node10" title=" " alt="" coords="399,253,438,280"/>
 </map>

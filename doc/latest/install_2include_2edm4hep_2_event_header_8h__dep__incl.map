@@ -1,7 +1,9 @@
 <map id="install/include/edm4hep/EventHeader.h" name="install/include/edm4hep/EventHeader.h">
-<area shape="rect" id="node1" title=" " alt="" coords="289,5,468,47"/>
-<area shape="rect" id="node2" href="$_event_header_8cc.html" title=" " alt="" coords="5,184,216,211"/>
-<area shape="rect" id="node3" href="$_event_header_const_8cc.html" title=" " alt="" coords="542,184,791,211"/>
-<area shape="rect" id="node4" href="$install_2include_2edm4hep_2_event_header_collection_8h.html" title=" " alt="" coords="285,95,472,136"/>
-<area shape="rect" id="node5" href="$_event_header_collection_8cc.html" title=" " alt="" coords="240,184,517,211"/>
+<area shape="rect" id="node1" title=" " alt="" coords="347,5,526,47"/>
+<area shape="rect" id="node2" href="$edm4hep_2edm4hep_2_event_header_collection_8h.html" title=" " alt="" coords="61,95,297,136"/>
+<area shape="rect" id="node4" href="$_event_header_8cc.html" title=" " alt="" coords="231,184,442,211"/>
+<area shape="rect" id="node5" href="$_event_header_const_8cc.html" title=" " alt="" coords="768,184,1017,211"/>
+<area shape="rect" id="node6" href="$install_2include_2edm4hep_2_event_header_collection_8h.html" title=" " alt="" coords="477,95,663,136"/>
+<area shape="rect" id="node3" href="$edm4hep_dict_8cxx.html" title=" " alt="" coords="5,184,207,211"/>
+<area shape="rect" id="node7" href="$_event_header_collection_8cc.html" title=" " alt="" coords="466,184,743,211"/>
 </map>
