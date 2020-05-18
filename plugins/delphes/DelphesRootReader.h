@@ -1,6 +1,8 @@
 #ifndef DELPHESEDM4HEP_DELPHESROOTREADER
 #define DELPHESEDM4HEP_DELPHESROOTREADER
 
+#include <iostream>
+
 #include "DelphesInputReader.h"
 
 #include "TObjArray.h"
@@ -25,6 +27,7 @@ class DelphesRootReader: public DelphesInputReader {
     m_chain = new TChain("Delphes");
 
     for(int i = 3; i < argc; ++i) {
+      //std::cout << argv[i] << std::endl;
       m_chain->Add(argv[i]);
     }
     m_treeReader = new ExRootTreeReader(m_chain);
@@ -34,7 +37,7 @@ class DelphesRootReader: public DelphesInputReader {
 
 
 
-
+    return true;
 
     };
   inline int getNumberOfEvents() {return m_numberOfEvents;}

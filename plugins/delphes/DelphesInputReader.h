@@ -13,6 +13,8 @@ public:
 
   virtual std::string getUsage() = 0;
 
+  virtual int getNumberOfEvents() = 0;
+
   virtual void readEvent(Delphes* modularDelphes, TObjArray* allParticleOutputArray,
   TObjArray* stableParticleOutputArray, TObjArray* partonOutputArray) = 0;
 
