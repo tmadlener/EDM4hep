@@ -99,7 +99,7 @@ if(BUILD_DDG4EDM4HEP)
   add_subdirectory(plugins/DDG4EDM4hep)
 endif()
 if(BUILD_DELPHESEDM4HEP)
-  add_subdirectory(plugins/Delphes)
+  add_subdirectory(plugins/delphes)
 endif()
 
 
