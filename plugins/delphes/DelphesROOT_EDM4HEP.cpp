@@ -60,6 +60,8 @@
 #include "edm4hep/ReconstructedParticleCollection.h"
 #include "edm4hep/MCParticleCollection.h"
 
+#include "DelphesRootReader.h"
+
 
 using std::cout;
 using std::cerr;
@@ -133,9 +135,7 @@ int main(int argc, char *argv[]) {
       }
     }
 
-    auto chain = std::make_unique<TChain>("Delphes");
 
-    auto factory = modularDelphes->GetFactory(); // memory managed in Delphes class
 
     // has to happen before InitTask
     TObjArray* allParticleOutputArray = modularDelphes->ExportArray("allParticles");
@@ -144,7 +144,8 @@ int main(int argc, char *argv[]) {
 
     modularDelphes->InitTask();
 
-
+    // reader init
+    auto chain = std::make_unique<TChain>("Delphes");
     for(i = 3; i < argc && !interrupted; ++i) {
       cout << "** Reading " << argv[i] << endl;
       chain->Add(argv[i]);
