@@ -38,6 +38,8 @@
 #include "TDatabasePDG.h"
 #include "TFile.h"
 #include "TLorentzVector.h"
+#include "Math/GenVector/LorentzVector.h"
+#include "Math/Vector4D.h"
 #include "TObjArray.h"
 #include "TParticlePDG.h"
 #include "TStopwatch.h"
@@ -53,8 +55,9 @@
 #include "ExRootAnalysis/ExRootTreeWriter.h"
 
 // podio specific includes
-#include "podio/EventStore.h"
-#include "podio/ROOTWriter.h"
+// NOTE: locally updated  prototypes!
+#include "ROOTWriter.h"
+#include "EventStore2.h"
 
 
 #include "edm4hep/ReconstructedParticleCollection.h"
@@ -67,27 +70,20 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
+// gracefully handle ctrl+c
 static bool interrupted = false;
-
 void SignalHandler(int sig) {
   interrupted = true;
 }
 
 
+// main function with generic input
 int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
   std::string appName = "DelphesROOT_EDM4HEP";
-  std::unique_ptr<TFile> outputFile = nullptr;
-  std::unique_ptr<TFile> inputFile = nullptr;
-
-  //DelphesRootReader inputReader = DelphesRootReader();
   inputReader.init(argc, argv);
-
-
-  Int_t i;
   Long64_t eventCounter, numberOfEvents;
-
-  if(argc < 4)
-  {
+  // command line argument handling
+  if(argc < 4) {
     cout << " Usage: " << appName << " config_file"
          << " output_file"
          << " input_file(s)" << endl;
@@ -96,14 +92,13 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
     cout << " input_file(s) - input file(s) in ROOT format." << endl;
     return 1;
   }
-
+  // gracefully handle ctrl+c
   signal(SIGINT, SignalHandler);
-
-
   try {
-
     podio::EventStore store;
     podio::ROOTWriter  writer(argv[2], &store);
+    // expose ttree directly to add additional branches (experimental)
+    TTree* eventsTree = writer.getEventsTree();
 
     auto confReader = std::make_unique<ExRootConfReader>();
     confReader->ReadFile(argv[1]);
@@ -115,26 +110,42 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
     ExRootConfParam branches = confReader->GetParam("TreeWriter::Branch");
     int nParams = branches.GetSize();
 
-    // create collections in eventstore
-    // unfortunately cannot create map with references
-    std::vector<std::reference_wrapper<edm4hep::ReconstructedParticleCollection>> recPartCollVec;
-    // TODO: need additional vectors for other 
+    std::unordered_map<std::string, podio::CollectionBase*> collmap;
+    std::unordered_map<std::string, TLorentzVector*> collmap_met;
+    std::unordered_map<std::string, std::vector<ROOT::Math::PxPyPzEVector>*> collmap_4v;
+    std::unordered_map<std::string, std::vector<float>*> collmap_float;
     for(int b = 0; b < nParams; b += 3) {
       TString input = branches[b].GetString();
       TString name = branches[b + 1].GetString();
       TString className = branches[b + 2].GetString();
       //std::cout <<  input << "\t" << name << "\t" << className << std::endl;
       // classes that are to be translated to a Reconstructed Particle
-      if (className == "Jet" || className == "Electron" || className ==  "Muon" || className == "Photon") {
-        edm4hep::ReconstructedParticleCollection& _coll = store.create<edm4hep::ReconstructedParticleCollection>(name.Data());
+      if (className == "Jet") {
+        store.create<edm4hep::ReconstructedParticleCollection>(name.Data());
+
         writer.registerForWrite(name.Data());
-        recPartCollVec.push_back(_coll);
+        edm4hep::ReconstructedParticleCollection* col2;
+        store.get2(name.Data(), col2);
+        collmap.insert({name.Data(), col2});
+
+        // additional unstructured branches
+        std::vector<ROOT::Math::PxPyPzEVector>* _v = new std::vector<ROOT::Math::PxPyPzEVector>();
+        collmap_4v.insert({(name+"SoftDroppedJet").Data(), _v});
+        eventsTree->Branch((name + "SoftDroppedJet").Data(), &(collmap_4v[(name+"SoftDroppedJet").Data()]));
+
+        // ...
+
+      } else if (className == "Electron" || className ==  "Muon" || className == "Photon") {
+        //TODO
+        //
       } else if (className == "GenParticle") {
         //TODO
       } else if (className == "ScalarHT") {
         //TODO
       } else if (className == "MissingET") {
-        //TODO
+        TLorentzVector* _v = new TLorentzVector();
+        collmap_met.insert({name.Data(), _v});
+        eventsTree->Branch(name.Data(), &(collmap_met[name.Data()]));
       }
     }
 
@@ -166,19 +177,28 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
           TString name = branches[b + 1].GetString();
           TString className = branches[b + 2].GetString();
           //std::cout << input << "\t" << name << "\t" << className << std::endl;
+          const TObjArray* delphesColl = modularDelphes->ImportArray(input);
           if (className == "Jet") {
-            edm4hep::ReconstructedParticleCollection& mcps = recPartCollVec[collcounter++];
-            const TObjArray* delphesColl = modularDelphes->ImportArray(input);
+            edm4hep::ReconstructedParticleCollection* mcps = static_cast<edm4hep::ReconstructedParticleCollection*>(collmap[name.Data()]);
+            std::vector<ROOT::Math::PxPyPzEVector>* _softdropped = collmap_4v[(name+"SoftDroppedJet").Data()];
+            _softdropped->clear();
+
             for (int j = 0; j < delphesColl->GetEntries(); j++) {
               auto cand = static_cast<Candidate*>(delphesColl->At(j));
-              auto mcp1 = mcps.create();
+              auto mcp1 = mcps->create();
               mcp1.setMass( cand->Mass ) ;
               mcp1.setCharge( cand->Charge );
-              mcp1.setMomentum( { cand->Momentum.Px(), cand->Momentum.Py(), cand->Momentum.Pz() }  ) ;
+              mcp1.setMomentum( { (float) cand->Momentum.Px(), (float) cand->Momentum.Py(), (float) cand->Momentum.Pz() }  ) ;
+              _softdropped->emplace_back(cand->SoftDroppedJet.Px(), cand->SoftDroppedJet.Py(), cand->SoftDroppedJet.Pz(), cand->SoftDroppedJet.E());
               //TODO set particleID
               //TODO set location
               //TODO ...
             }
+          } else if (className == "MissingET") {
+            // there will only ever be one element in this array
+            // no need to save it as a container 
+            auto cand = static_cast<Candidate*>(delphesColl->At(0));
+            collmap_met[name.Data()] = &(cand->Momentum);
           }
         }
         modularDelphes->Clear();
