@@ -133,6 +133,43 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
         collmap_4v.insert({(name+"SoftDroppedJet").Data(), _v});
         eventsTree->Branch((name + "SoftDroppedJet").Data(), &(collmap_4v[(name+"SoftDroppedJet").Data()]));
 
+        // additional unstructured branches
+        _v = new std::vector<ROOT::Math::PxPyPzEVector>();
+        collmap_4v.insert({(name+"SoftDroppedSubJet1").Data(), _v});
+        eventsTree->Branch((name + "SoftDroppedSubJet1").Data(), &(collmap_4v[(name+"SoftDroppedSubJet1").Data()]));
+
+        _v = new std::vector<ROOT::Math::PxPyPzEVector>();
+        collmap_4v.insert({(name+"SoftDroppedSubJet2").Data(), _v});
+        eventsTree->Branch((name + "SoftDroppedSubJet2").Data(), &(collmap_4v[(name+"SoftDroppedSubJet2").Data()]));
+
+        auto _vf = new std::vector<float>();
+        collmap_float.insert({(name+"Tau1").Data(), _vf});
+        eventsTree->Branch((name + "Tau1").Data(), &(collmap_float[(name+"Tau1").Data()]));
+
+        _vf = new std::vector<float>();
+        collmap_float.insert({(name+"Tau2").Data(), _vf});
+        eventsTree->Branch((name + "Tau2").Data(), &(collmap_float[(name+"Tau2").Data()]));
+
+        _vf = new std::vector<float>();
+        collmap_float.insert({(name+"Tau3").Data(), _vf});
+        eventsTree->Branch((name + "Tau3").Data(), &(collmap_float[(name+"Tau3").Data()]));
+
+        _vf = new std::vector<float>();
+        collmap_float.insert({(name+"Tau4").Data(), _vf});
+        eventsTree->Branch((name + "Tau4").Data(), &(collmap_float[(name+"Tau4").Data()]));
+
+        _vf = new std::vector<float>();
+        collmap_float.insert({(name+"Tau5").Data(), _vf});
+        eventsTree->Branch((name + "Tau5").Data(), &(collmap_float[(name+"Tau5").Data()]));
+
+        _vf = new std::vector<float>();
+        collmap_float.insert({(name+"DeltaEta").Data(), _vf});
+        eventsTree->Branch((name + "DeltaEta").Data(), &(collmap_float[(name+"DeltaEta").Data()]));
+
+        _vf = new std::vector<float>();
+        collmap_float.insert({(name+"DeltaPhi").Data(), _vf});
+        eventsTree->Branch((name + "DeltaPhi").Data(), &(collmap_float[(name+"DeltaPhi").Data()]));
+
         // ...
 
       } else if (className == "Electron" || className ==  "Muon" || className == "Photon") {
@@ -183,13 +220,45 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
             std::vector<ROOT::Math::PxPyPzEVector>* _softdropped = collmap_4v[(name+"SoftDroppedJet").Data()];
             _softdropped->clear();
 
+            std::vector<ROOT::Math::PxPyPzEVector>* _softdroppedsubjet1 = collmap_4v[(name+"SoftDroppedSubJet1").Data()];
+            _softdroppedsubjet1->clear();
+
+            std::vector<ROOT::Math::PxPyPzEVector>* _softdroppedsubjet2 = collmap_4v[(name+"SoftDroppedSubJet2").Data()];
+            _softdroppedsubjet2->clear();
+
+            std::vector<float>* _tau1 = collmap_float[(name+"Tau1").Data()];
+            _tau1->clear();
+            std::vector<float>* _tau2 = collmap_float[(name+"Tau2").Data()];
+            _tau2->clear();
+            std::vector<float>* _tau3 = collmap_float[(name+"Tau3").Data()];
+            _tau3->clear();
+            std::vector<float>* _tau4 = collmap_float[(name+"Tau4").Data()];
+            _tau4->clear();
+            std::vector<float>* _tau5 = collmap_float[(name+"Tau5").Data()];
+            _tau5->clear();
+
+            std::vector<float>* _DeltaEta = collmap_float[(name+"DeltaEta").Data()];
+            _DeltaEta->clear();
+
+            std::vector<float>* _DeltaPhi = collmap_float[(name+"DeltaPhi").Data()];
+            _DeltaPhi->clear();
+
             for (int j = 0; j < delphesColl->GetEntries(); j++) {
               auto cand = static_cast<Candidate*>(delphesColl->At(j));
               auto mcp1 = mcps->create();
+
               mcp1.setMass( cand->Mass ) ;
               mcp1.setCharge( cand->Charge );
               mcp1.setMomentum( { (float) cand->Momentum.Px(), (float) cand->Momentum.Py(), (float) cand->Momentum.Pz() }  ) ;
               _softdropped->emplace_back(cand->SoftDroppedJet.Px(), cand->SoftDroppedJet.Py(), cand->SoftDroppedJet.Pz(), cand->SoftDroppedJet.E());
+
+              _tau1->emplace_back(cand->Tau[0]);
+              _tau2->emplace_back(cand->Tau[1]);
+              _tau3->emplace_back(cand->Tau[2]);
+              _tau4->emplace_back(cand->Tau[3]);
+              _tau5->emplace_back(cand->Tau[4]);
+              _DeltaEta->emplace_back(cand->DeltaEta);
+              _DeltaPhi->emplace_back(cand->DeltaPhi);
               //TODO set particleID
               //TODO set location
               //TODO ...
