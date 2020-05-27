@@ -162,6 +162,9 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
         collmap_float.insert({(name+"Tau5").Data(), _vf});
         eventsTree->Branch((name + "Tau5").Data(), &(collmap_float[(name+"Tau5").Data()]));
 
+        auto _vff = new std::vector<Float_t[5]>();
+        eventsTree->Branch((name + "Tau").Data(), &_vff);
+
         _vf = new std::vector<float>();
         collmap_float.insert({(name+"DeltaEta").Data(), _vf});
         eventsTree->Branch((name + "DeltaEta").Data(), &(collmap_float[(name+"DeltaEta").Data()]));
@@ -172,13 +175,34 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
 
         // ...
 
-      } else if (className == "Electron" || className ==  "Muon" || className == "Photon") {
-        //TODO
-        //
+
+      } else if (className == "Photon") {
+        store.create<edm4hep::ReconstructedParticleCollection>(name.Data());
+        writer.registerForWrite(name.Data());
+        edm4hep::ReconstructedParticleCollection* col2;
+        store.get2(name.Data(), col2);
+        collmap.insert({name.Data(), col2});
+        auto _vf = new std::vector<float>();
+        collmap_float.insert({(name+"EhadOverEem").Data(), _vf});
+        eventsTree->Branch((name + "EhadOverEem").Data(), &(collmap_float[(name+"EhadOverEem").Data()]));
+      } else if (className == "Electron") {
+        store.create<edm4hep::ReconstructedParticleCollection>(name.Data());
+        writer.registerForWrite(name.Data());
+        edm4hep::ReconstructedParticleCollection* col2;
+        store.get2(name.Data(), col2);
+        collmap.insert({name.Data(), col2});
+      } else if (className == "Muon") {
+        store.create<edm4hep::ReconstructedParticleCollection>(name.Data());
+        writer.registerForWrite(name.Data());
+        edm4hep::ReconstructedParticleCollection* col2;
+        store.get2(name.Data(), col2);
+        collmap.insert({name.Data(), col2});
       } else if (className == "GenParticle") {
         //TODO
       } else if (className == "ScalarHT") {
-        //TODO
+        auto _vf = new std::vector<float>();
+        collmap_float.insert({(name+"HT").Data(), _vf});
+        eventsTree->Branch((name+"HT").Data(), &(collmap_float[(name+"HT").Data()]));
       } else if (className == "MissingET") {
         TLorentzVector* _v = new TLorentzVector();
         collmap_met.insert({name.Data(), _v});
@@ -216,16 +240,15 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
           //std::cout << input << "\t" << name << "\t" << className << std::endl;
           const TObjArray* delphesColl = modularDelphes->ImportArray(input);
           if (className == "Jet") {
-            edm4hep::ReconstructedParticleCollection* mcps = static_cast<edm4hep::ReconstructedParticleCollection*>(collmap[name.Data()]);
-            std::vector<ROOT::Math::PxPyPzEVector>* _softdropped = collmap_4v[(name+"SoftDroppedJet").Data()];
+            edm4hep::ReconstructedParticleCollection* mcps = 
+                static_cast<edm4hep::ReconstructedParticleCollection*>(collmap[name.Data()]);
+            std::vector<ROOT::Math::PxPyPzEVector>* _softdropped = 
+                collmap_4v[(name+"SoftDroppedJet").Data()];
             _softdropped->clear();
-
             std::vector<ROOT::Math::PxPyPzEVector>* _softdroppedsubjet1 = collmap_4v[(name+"SoftDroppedSubJet1").Data()];
             _softdroppedsubjet1->clear();
-
             std::vector<ROOT::Math::PxPyPzEVector>* _softdroppedsubjet2 = collmap_4v[(name+"SoftDroppedSubJet2").Data()];
             _softdroppedsubjet2->clear();
-
             std::vector<float>* _tau1 = collmap_float[(name+"Tau1").Data()];
             _tau1->clear();
             std::vector<float>* _tau2 = collmap_float[(name+"Tau2").Data()];
@@ -236,21 +259,22 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
             _tau4->clear();
             std::vector<float>* _tau5 = collmap_float[(name+"Tau5").Data()];
             _tau5->clear();
-
             std::vector<float>* _DeltaEta = collmap_float[(name+"DeltaEta").Data()];
             _DeltaEta->clear();
-
             std::vector<float>* _DeltaPhi = collmap_float[(name+"DeltaPhi").Data()];
             _DeltaPhi->clear();
-
             for (int j = 0; j < delphesColl->GetEntries(); j++) {
               auto cand = static_cast<Candidate*>(delphesColl->At(j));
               auto mcp1 = mcps->create();
-
               mcp1.setMass( cand->Mass ) ;
               mcp1.setCharge( cand->Charge );
-              mcp1.setMomentum( { (float) cand->Momentum.Px(), (float) cand->Momentum.Py(), (float) cand->Momentum.Pz() }  ) ;
-              _softdropped->emplace_back(cand->SoftDroppedJet.Px(), cand->SoftDroppedJet.Py(), cand->SoftDroppedJet.Pz(), cand->SoftDroppedJet.E());
+              mcp1.setMomentum( { (float) cand->Momentum.Px(), 
+                                  (float) cand->Momentum.Py(),
+                                  (float) cand->Momentum.Pz() }  ) ;
+              _softdropped->emplace_back(cand->SoftDroppedJet.Px(), 
+                                         cand->SoftDroppedJet.Py(),
+                                         cand->SoftDroppedJet.Pz(),
+                                         cand->SoftDroppedJet.E());
 
               _tau1->emplace_back(cand->Tau[0]);
               _tau2->emplace_back(cand->Tau[1]);
@@ -263,6 +287,53 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
               //TODO set location
               //TODO ...
             }
+          } else if (className == "Photon") {
+            edm4hep::ReconstructedParticleCollection* mcps =
+                static_cast<edm4hep::ReconstructedParticleCollection*>(collmap[name.Data()]);
+            std::vector<float>* _EhadOverEem = collmap_float[(name+"EhadOverEem").Data()];
+            _EhadOverEem->clear();
+            for (int j = 0; j < delphesColl->GetEntries(); j++) {
+              auto cand = static_cast<Candidate*>(delphesColl->At(j));
+              auto mcp1 = mcps->create();
+              mcp1.setMass( cand->Mass ) ;
+              mcp1.setCharge( cand->Charge );
+              mcp1.setMomentum( { (float) cand->Momentum.Px(), 
+                                  (float) cand->Momentum.Py(),
+                                  (float) cand->Momentum.Pz() }  ) ;
+
+                _EhadOverEem->emplace_back(cand->Eem > 0.0 ? cand->Ehad / cand->Eem : 999.9);
+            }
+          } else if (className == "Electron") {
+            edm4hep::ReconstructedParticleCollection* mcps =
+                static_cast<edm4hep::ReconstructedParticleCollection*>(collmap[name.Data()]);
+            for (int j = 0; j < delphesColl->GetEntries(); j++) {
+              auto cand = static_cast<Candidate*>(delphesColl->At(j));
+              auto mcp1 = mcps->create();
+              mcp1.setMass( cand->Mass ) ;
+              mcp1.setCharge( cand->Charge );
+              mcp1.setMomentum( { (float) cand->Momentum.Px(), 
+                                  (float) cand->Momentum.Py(),
+                                  (float) cand->Momentum.Pz() }  ) ;
+
+            }
+          } else if (className == "Muon") {
+            edm4hep::ReconstructedParticleCollection* mcps =
+                static_cast<edm4hep::ReconstructedParticleCollection*>(collmap[name.Data()]);
+            for (int j = 0; j < delphesColl->GetEntries(); j++) {
+              auto cand = static_cast<Candidate*>(delphesColl->At(j));
+              auto mcp1 = mcps->create();
+              mcp1.setMass( cand->Mass ) ;
+              mcp1.setCharge( cand->Charge );
+              mcp1.setMomentum( { (float) cand->Momentum.Px(), 
+                                  (float) cand->Momentum.Py(),
+                                  (float) cand->Momentum.Pz() }  ) ;
+
+            }
+          } else if (className == "ScalarHT") {
+            std::vector<float>* _ScalarHTHT = collmap_float[(name+"HT").Data()];
+            _ScalarHTHT->clear();
+            auto cand = static_cast<Candidate*>(delphesColl->At(0));
+            _ScalarHTHT->emplace_back(cand->Momentum.Pt());
           } else if (className == "MissingET") {
             // there will only ever be one element in this array
             // no need to save it as a container 
