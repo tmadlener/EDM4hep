@@ -76,6 +76,27 @@ void SignalHandler(int sig) {
   interrupted = true;
 }
 
+template <typename> struct TypeDebug;
+
+template<typename EDM4HepCollectionT>
+auto addToCollection(Candidate* delphesCand, EDM4HepCollectionT& collection) -> decltype(collection.create()) {
+  auto cand = collection.create();
+  cand.setMass(delphesCand->Mass);
+  cand.setCharge(delphesCand->Charge);
+
+  cand.setMomentum({(float) delphesCand->Momentum.Px(), (float) delphesCand->Momentum.Py(), (float) delphesCand->Momentum.Pz()});
+  cand.setVertex({(float) delphesCand->Position.X(), (float) delphesCand->Position.Y(), (float) delphesCand->Position.Z()});
+
+  // TODO:
+  // - status (which parts go into generator and simulator status)
+  // - relations
+  // - not all information ported yet
+  // - vertex information done correctly?
+  // - PID (Delphes) <-> PDG (edm4hep)?
+  // - time (does delphes indeed use seconds?)
+
+  return cand;
+}
 
 // main function with generic input
 int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
@@ -109,6 +130,10 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
     std::unordered_map<std::string, TLorentzVector*> collmap_met;
     std::unordered_map<std::string, std::vector<ROOT::Math::PxPyPzEVector>*> collmap_4v;
     std::unordered_map<std::string, std::vector<float>*> collmap_float;
+
+    auto& mcParticleCollection = store.create<edm4hep::MCParticleCollection>("MCParticles");
+    writer.registerForWrite("MCParticles");
+
     for(int b = 0; b < nParams; b += 3) {
       TString input = branches[b].GetString();
       TString name = branches[b + 1].GetString();
@@ -305,6 +330,7 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
         eventsTree->Branch((name + "ErrorDZ").Data(), &(collmap_float[(name+"ErrorDZ").Data()]));
       } else if (className == "GenParticle") {
         //TODO
+        // see above
       } else if (className == "ScalarHT") {
         auto _vf = new std::vector<float>();
         collmap_float.insert({(name+"HT").Data(), _vf});
@@ -555,6 +581,13 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
             // no need to save it as a container 
             auto cand = static_cast<Candidate*>(delphesColl->At(0));
             collmap_met[name.Data()] = &(cand->Momentum);
+          } else if (className == "GenParticle") {
+            for (int iCand = 0; iCand < delphesColl->GetEntriesFast(); ++iCand) {
+              auto* delphesCand = static_cast<Candidate*>(delphesColl->At(iCand));
+              auto cand = addToCollection(delphesCand, mcParticleCollection);
+
+              cand.setPDG(delphesCand->PID); // delphes uses whatever hepevt.idhep provides
+            }
           }
         }
         modularDelphes->Clear();
