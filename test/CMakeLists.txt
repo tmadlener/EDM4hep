@@ -2,20 +2,6 @@ IF(NOT BUILD_TESTING)
   RETURN()
 ENDIF()
 
-#=====================================================================
-# check if the linker supports as needed or not
-#   (needed for ROOT dict, specifically on Ubuntu)
-set(STORE_REQUIRED_FLAGS ${CMAKE_REQUIRED_FLAGS})
-include(CheckCCompilerFlag)
-set(CMAKE_REQUIRED_FLAGS "-Wl,--no-as-needed")
-check_c_compiler_flag("" TEST_NO_AS_NEEDED)
-set(CMAKE_REQUIRED_FLAGS "-Wl,--as-needed")
-check_c_compiler_flag("" TEST_AS_NEEDED)
-set(CMAKE_REQUIRED_FLAGS ${STORE_REQUIRED_FLAGS})
-#=====================================================================
-
-
-
 add_executable(write_events write_events.cc)
 target_include_directories(write_events PUBLIC ${CMAKE_SOURCE_DIR}/edm4hep )
 if(TEST_NO_AS_NEEDED AND TEST_AS_NEEDED)
