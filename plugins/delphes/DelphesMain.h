@@ -80,7 +80,9 @@ void SignalHandler(int sig) {
 // main function with generic input
 int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
   std::string appName = "DelphesROOT_EDM4HEP";
-  inputReader.init(argc, argv);
+  Delphes* modularDelphes = new Delphes("Delphes");
+  std::string outputfile;
+  inputReader.init(modularDelphes,argc, argv, outputfile);
   Long64_t eventCounter, numberOfEvents;
   // command line argument handling
   if(argc < 4) {
@@ -96,7 +98,7 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
   signal(SIGINT, SignalHandler);
   try {
     podio::EventStore store;
-    podio::ROOTWriter  writer(argv[2], &store);
+    podio::ROOTWriter  writer(outputfile, &store);
     // expose ttree directly to add additional branches (experimental)
     TTree* eventsTree = writer.getEventsTree();
 
@@ -104,7 +106,6 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
     confReader->ReadFile(argv[1]);
 
     // todo: ROOT error on 6.20.04 if this is a unique pointer
-    Delphes* modularDelphes = new Delphes("Delphes");
     modularDelphes->SetConfReader(confReader.get());
 
     ExRootConfParam branches = confReader->GetParam("TreeWriter::Branch");
@@ -339,7 +340,10 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
 
     for (Int_t entry = 0; entry < inputReader.getNumberOfEvents() && !interrupted; ++entry) {
       
-      inputReader.readEvent(modularDelphes, allParticleOutputArray, stableParticleOutputArray, partonOutputArray);
+      bool success = inputReader.readEvent(modularDelphes, allParticleOutputArray, stableParticleOutputArray, partonOutputArray);
+      if (!success) {
+      break;
+      }
 
       modularDelphes->ProcessTask();
 
