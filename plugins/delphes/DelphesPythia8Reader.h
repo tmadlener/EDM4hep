@@ -286,6 +286,8 @@ class DelphesPythia8Reader: public DelphesInputReader {
     return true;
     };
 
+    inline bool finished() {return m_entry < m_numberOfEvents;};
+
 private:
   const std::string m_appName = "DelphesPythia8";
   const std::string m_usage;

@@ -8,6 +8,12 @@ target_include_directories(DelphesROOT_EDM4HEP PRIVATE ${DELPHES_INCLUDE_DIRS})
 target_link_libraries(DelphesROOT_EDM4HEP ${DELPHES_LIBRARY} edm4hep edm4hepDict podio::podioRootIO ROOT::Physics  ROOT::GenVector ROOT::MathCore)
 install(TARGETS DelphesROOT_EDM4HEP DESTINATION bin)
 
+# build all executables and put them into bin/
+add_executable(DelphesHepMC_EDM4HEP DelphesHepMC_EDM4HEP.cpp Delphes.cc)
+target_include_directories(DelphesHepMC_EDM4HEP PRIVATE ${DELPHES_INCLUDE_DIRS})
+target_link_libraries(DelphesHepMC_EDM4HEP ${DELPHES_LIBRARY} edm4hep edm4hepDict podio::podioRootIO ROOT::Physics  ROOT::GenVector ROOT::MathCore)
+install(TARGETS DelphesHepMC_EDM4HEP DESTINATION bin)
+
 find_package(Pythia8)
 find_package(ROOT COMPONENTS EG Eve Geom Gui GuiHtml GenVector Hist Physics Matrix Graf RIO Tree Gpad RGL MathCore)
 

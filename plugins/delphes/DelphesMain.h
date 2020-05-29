@@ -109,6 +109,10 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
     modularDelphes->SetConfReader(confReader.get());
 
     ExRootConfParam branches = confReader->GetParam("TreeWriter::Branch");
+    int maxEvents = confReader->GetInt("::MaxEvents", 0);
+
+
+
     int nParams = branches.GetSize();
 
     std::unordered_map<std::string, podio::CollectionBase*> collmap;
@@ -338,7 +342,8 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
     modularDelphes->Clear();
 
 
-    for (Int_t entry = 0; entry < inputReader.getNumberOfEvents() && !interrupted; ++entry) {
+    for (Int_t entry = 0; inputReader.finished() && maxEvents > 0 ?  entry < maxEvents : true && !interrupted; ++entry) {
+      std::cout << inputReader.finished() << " "<< entry << " " << maxEvents << " " << (maxEvents > 0 ?  entry < maxEvents : true) <<   std::endl;
       
       bool success = inputReader.readEvent(modularDelphes, allParticleOutputArray, stableParticleOutputArray, partonOutputArray);
       if (!success) {
