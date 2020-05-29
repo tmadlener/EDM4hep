@@ -1,5 +1,5 @@
-#ifndef DELPHESEDM4HEP_DELPHESHEPMCREADER
-#define DELPHESEDM4HEP_DELPHESHEPMCREADER
+#ifndef DELPHESEDM4HEP_DELPHESTDREADER
+#define DELPHESEDM4HEP_DELPHESTDREADER
 
 #include <iostream>
 
@@ -12,7 +12,7 @@
 #include "classes/DelphesClasses.h"
 #include "classes/DelphesFactory.h"
 #include "classes/DelphesStream.h"
-#include "classes/DelphesHepMCReader.h"
+#include "classes/DelphesSTDHEPReader.h"
 #include "modules/Delphes.h"
 
 #include "ExRootAnalysis/ExRootTreeBranch.h"
@@ -24,17 +24,16 @@
 using std::stringstream;
 using std::runtime_error;
 
-class DelphesHepMCInputReader: public DelphesInputReader {
+class DelphesSTDHEPInputReader: public DelphesInputReader {
   public:
-  inline DelphesHepMCInputReader() {};
+  inline DelphesSTDHEPInputReader() {};
   inline bool init(Delphes* modularDelphes, int argc, char *argv[], std::string& outputfile) {
     outputfile = argv[2];
 
     int i = 3;
 
-    branchEvent = new ExRootTreeBranch("Event", HepMCEvent::Class());
-    branchWeight = new ExRootTreeBranch("Weight", Weight::Class());
-    reader = new DelphesHepMCReader;
+    branchEvent = new ExRootTreeBranch("Event", LHEFEvent::Class());
+    reader = new DelphesSTDHEPReader;
 
       if(i == argc || strncmp(argv[i], "-", 2) == 0)
       {
@@ -83,7 +82,6 @@ class DelphesHepMCInputReader: public DelphesInputReader {
       } while(m_finished && !reader->EventReady());
       readStopWatch.Stop();
       reader->AnalyzeEvent(branchEvent, eventCounter, &readStopWatch, &procStopWatch);
-      reader->AnalyzeWeight(branchWeight);
       reader->Clear();
       return m_finished;
     };
@@ -107,12 +105,12 @@ private:
   TFile *outputFile = 0;
   TStopwatch readStopWatch, procStopWatch;
   ExRootTreeWriter *treeWriter = 0;
-  ExRootTreeBranch *branchEvent = 0, *branchWeight = 0;
+  ExRootTreeBranch *branchEvent = 0;
   ExRootConfReader *confReader = 0;
   Delphes *modularDelphes = 0;
   DelphesFactory *factory = 0;
   TObjArray *stableParticleOutputArray = 0, *allParticleOutputArray = 0, *partonOutputArray = 0;
-  DelphesHepMCReader *reader = 0;
+  DelphesSTDHEPReader *reader = 0;
   Int_t i, maxEvents, skipEvents;
   Long64_t length, eventCounter;
 

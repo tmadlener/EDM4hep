@@ -84,16 +84,6 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
   std::string outputfile;
   inputReader.init(modularDelphes,argc, argv, outputfile);
   Long64_t eventCounter, numberOfEvents;
-  // command line argument handling
-  if(argc < 4) {
-    cout << " Usage: " << appName << " config_file"
-         << " output_file"
-         << " input_file(s)" << endl;
-    cout << " config_file - configuration file in Tcl format," << endl;
-    cout << " output_file - output file in ROOT format," << endl;
-    cout << " input_file(s) - input file(s) in ROOT format." << endl;
-    return 1;
-  }
   // gracefully handle ctrl+c
   signal(SIGINT, SignalHandler);
   try {
