@@ -469,6 +469,10 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
               auto genCand = static_cast<Candidate*>(cand->GetCandidates()->At(0));
               mcParticleRelations.emplace(genCand->GetUniqueID(), mcp1);
 
+              std::cout << className << ": Delphes UniqueId = " << genCand->GetUniqueID() 
+                        << " total related: "  << cand->GetCandidates()->GetEntries() << "\n";
+
+
 
                 _EhadOverEem->emplace_back(cand->Eem > 0.0 ? cand->Ehad / cand->Eem : 999.9);
                 _IsolationVar->emplace_back(cand->IsolationVar);
@@ -522,6 +526,9 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
                                   (float) cand->Momentum.Py(),
                                   (float) cand->Momentum.Pz() }  ) ;
 
+              std::cout << className << ": Delphes UniqueId = " << cand->GetUniqueID() 
+                        << " total related: "  << cand->GetCandidates()->GetEntries() << "\n";
+
               auto genCand = static_cast<Candidate*>(cand->GetCandidates()->At(0));
               mcParticleRelations.emplace(genCand->GetUniqueID(), mcp1);
 
@@ -572,6 +579,9 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
               auto cand = static_cast<Candidate*>(delphesColl->At(j));
               auto edm4hepCand = addToCollection(cand, *mcps);
               auto genParticles = cand->GetCandidates();
+
+              std::cout << className << ": Delphes UniqueId = " << cand->GetUniqueID() 
+                        << " total related: "  << cand->GetCandidates()->GetEntries() << "\n";
 
               // The Candidate has potentially more than one attached candidate.
               // However, by Delphes convention the first one is the MC particle
