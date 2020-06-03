@@ -78,25 +78,78 @@ void SignalHandler(int sig) {
   interrupted = true;
 }
 
-template <typename> struct TypeDebug;
-
-template<typename EDM4HepCollectionT>
-auto addToCollection(Candidate* delphesCand, EDM4HepCollectionT& collection) -> decltype(collection.create()) {
-  auto cand = collection.create();
-  cand.setMass(delphesCand->Mass);
+/**
+ * To fill the basic information that is shared by all edm4hep types
+ */
+template <typename EDM4hepT>
+EDM4hepT fromDelphesBase(Candidate* delphesCand) {
+  EDM4hepT cand;
   cand.setCharge(delphesCand->Charge);
-
-  cand.setMomentum({(float) delphesCand->Momentum.Px(), (float) delphesCand->Momentum.Py(), (float) delphesCand->Momentum.Pz()});
-
-  // TODO:
-  // - status (which parts go into generator and simulator status)
-  // - relations
-  // - not all information ported yet
-  // - vertex information done correctly?
-  // - PID (Delphes) <-> PDG (edm4hep)?
-  // - time (does delphes indeed use seconds?)
+  cand.setMass(delphesCand->Mass);
+  cand.setMomentum({
+    (float) delphesCand->Momentum.Px(),
+    (float) delphesCand->Momentum.Py(),
+    (float) delphesCand->Momentum.Pz()
+  });
 
   return cand;
+}
+
+// Following what is done in TreeWriter::FillParticles
+int findPhotonMC(Candidate* candidate) {
+  std::vector<int> relatedCandidates;
+  TIter it1(candidate->GetCandidates());
+  it1.Reset();
+
+  while((candidate = static_cast<Candidate*>(it1.Next()))) {
+    TIter it2(candidate->GetCandidates());
+
+    // particle
+    if (candidate->GetCandidates()->GetEntriesFast() == 0) {
+      relatedCandidates.push_back(candidate->GetUniqueID());
+      continue;
+    }
+
+    // track
+    candidate = static_cast<Candidate*>(candidate->GetCandidates()->At(0));
+    if (candidate->GetCandidates()->GetEntriesFast() == 0) {
+      relatedCandidates.push_back(candidate->GetUniqueID());
+      continue;
+    }
+
+    // tower
+    it2.Reset();
+    while((candidate = static_cast<Candidate*>(it2.Next()))) {
+      relatedCandidates.push_back(candidate->GetCandidates()->At(0)->GetUniqueID());
+    }
+  }
+
+  // If there is only one relation, assume that it is the generated particle and
+  // return the ID. Otherwise return -1 to signal that this was not the case
+  if (relatedCandidates.size() == 1) {
+    return relatedCandidates[0];
+  }
+
+  std::cout << "Found " << relatedCandidates.size() << " candidates related to the photon" << std::endl;
+
+  return -1;
+}
+
+
+void printCandidates(TObjArray* candArray)
+{
+  Candidate* candidate = nullptr;
+  TIter candidatesIt(candArray);
+  candidatesIt.Reset();
+
+
+  std::cout << "*** Related candidates as they appear without sorting\n";
+  while((candidate = static_cast<Candidate*>(candidatesIt.Next()))) {
+    const TLorentzVector& momentum = candidate->Momentum;
+    std::cout << " UniqueID: " << candidate->GetUniqueID() << ", "
+              << "(Px, Py, Pz) = " << "(" << momentum.Px() << ", " << momentum.Py() << ", " << momentum.Pz() << "), "
+              << "E = " << momentum.E() << ", M = " << momentum.M() << "\n";
+  }
 }
 
 // main function with generic input
@@ -366,7 +419,7 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
 
     for (Int_t entry = 0; inputReader.finished() && maxEvents > 0 ?  entry < maxEvents : true && !interrupted; ++entry) {
       std::cout << inputReader.finished() << " "<< entry << " " << maxEvents << " " << (maxEvents > 0 ?  entry < maxEvents : true) <<   std::endl;
-      
+
       bool success = inputReader.readEvent(modularDelphes, allParticleOutputArray, stableParticleOutputArray, partonOutputArray);
       if (!success) {
       break;
@@ -376,7 +429,7 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
 
       // collect all associations and process them after all Delphes candidates
       // have been stored
-      std::unordered_multimap<UInt_t, edm4hep::ConstReconstructedParticle> mcParticleRelations;
+      std::vector<std::pair<UInt_t, edm4hep::ConstReconstructedParticle>> mcParticleRelations;
       std::unordered_map<UInt_t, edm4hep::ConstMCParticle> mcParticleIds;
 
         unsigned int collcounter = 0;
@@ -387,9 +440,9 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
           //std::cout << input << "\t" << name << "\t" << className << std::endl;
           const TObjArray* delphesColl = modularDelphes->ImportArray(input);
           if (className == "Jet") {
-            edm4hep::ReconstructedParticleCollection* mcps = 
+            edm4hep::ReconstructedParticleCollection* mcps =
                 static_cast<edm4hep::ReconstructedParticleCollection*>(collmap[name.Data()]);
-            std::vector<ROOT::Math::PxPyPzEVector>* _softdropped = 
+            std::vector<ROOT::Math::PxPyPzEVector>* _softdropped =
                 collmap_4v[(name+"SoftDroppedJet").Data()];
             _softdropped->clear();
             std::vector<ROOT::Math::PxPyPzEVector>* _softdroppedsubjet1 = collmap_4v[(name+"SoftDroppedSubJet1").Data()];
@@ -415,11 +468,11 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
               auto mcp1 = mcps->create();
               mcp1.setMass( cand->Mass ) ;
               mcp1.setCharge( cand->Charge );
-              mcp1.setMomentum( { (float) cand->Momentum.Px(), 
+              mcp1.setMomentum( { (float) cand->Momentum.Px(),
                                   (float) cand->Momentum.Py(),
                                   (float) cand->Momentum.Pz() }  ) ;
 
-              _softdropped->emplace_back(cand->SoftDroppedJet.Px(), 
+              _softdropped->emplace_back(cand->SoftDroppedJet.Px(),
                                          cand->SoftDroppedJet.Py(),
                                          cand->SoftDroppedJet.Pz(),
                                          cand->SoftDroppedJet.E());
@@ -461,19 +514,19 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
             _SumPt->clear();
             for (int j = 0; j < delphesColl->GetEntries(); j++) {
               auto cand = static_cast<Candidate*>(delphesColl->At(j));
-              auto mcp1 = mcps->create();
-              mcp1.setMass( cand->Mass ) ;
-              mcp1.setCharge( cand->Charge );
-              mcp1.setMomentum( { (float) cand->Momentum.Px(), 
-                                  (float) cand->Momentum.Py(),
-                                  (float) cand->Momentum.Pz() }  ) ;
+              auto mcp1 = fromDelphesBase<edm4hep::ReconstructedParticle>(cand);
+              mcps->push_back(mcp1);
 
-              auto genCand = static_cast<Candidate*>(cand->GetCandidates()->At(0));
-              mcParticleRelations.emplace(genCand->GetUniqueID(), mcp1);
+              auto mcId = findPhotonMC(cand);
+              if (mcId > -1) {
+                mcParticleRelations.emplace_back(mcId, mcp1);
+              }
 
-              std::cout << className << ": Delphes UniqueId = " << genCand->GetUniqueID() 
-                        << " total related: "  << cand->GetCandidates()->GetEntries() << "\n";
-
+              // const auto& mom = cand->Momentum;
+              // std::cout << className << ": UniqueId: " << cand->GetUniqueID()
+              //           << "(Px, Py, Pz) = (" << mom.Px() << ", " << mom.Py() << ", " << mom.Pz() << ")"
+              //           << " | total related: "  << cand->GetCandidates()->GetEntries() << std::endl;
+              // printCandidates(cand->GetCandidates());
 
 
                 _EhadOverEem->emplace_back(cand->Eem > 0.0 ? cand->Ehad / cand->Eem : 999.9);
@@ -521,18 +574,20 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
 
             for (int j = 0; j < delphesColl->GetEntries(); j++) {
               auto cand = static_cast<Candidate*>(delphesColl->At(j));
-              auto mcp1 = mcps->create();
-              mcp1.setMass( cand->Mass ) ;
-              mcp1.setCharge( cand->Charge );
-              mcp1.setMomentum( { (float) cand->Momentum.Px(), 
-                                  (float) cand->Momentum.Py(),
-                                  (float) cand->Momentum.Pz() }  ) ;
+              auto mcp1 = fromDelphesBase<edm4hep::ReconstructedParticle>(cand);
+              mcps->push_back(mcp1);
 
-              std::cout << className << ": Delphes UniqueId = " << cand->GetUniqueID() 
-                        << " total related: "  << cand->GetCandidates()->GetEntries() << "\n";
+              // const auto& mom = cand->Momentum;
+              // std::cout << className << ": UniqueId: " << cand->GetUniqueID()
+              //           << "(Px, Py, Pz) = (" << mom.Px() << ", " << mom.Py() << ", " << mom.Pz() << ")"
+              //           << " | total related: "  << cand->GetCandidates()->GetEntries() << std::endl;
+              // printCandidates(cand->GetCandidates());
 
+              // Delphes candiates usually have three candidates related to
+              // them. Following the same appraoch as in the Delphes::TreeWriter
+              // and using the first one as generated particle
               auto genCand = static_cast<Candidate*>(cand->GetCandidates()->At(0));
-              mcParticleRelations.emplace(genCand->GetUniqueID(), mcp1);
+              mcParticleRelations.emplace_back(genCand->GetUniqueID(), mcp1);
 
                 _IsolationVar->emplace_back(cand->IsolationVar);
                 _IsolationVarRhoCorr->emplace_back(cand->IsolationVarRhoCorr);
@@ -579,16 +634,22 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
             _ErrorDZ->clear();
             for (int j = 0; j < delphesColl->GetEntries(); j++) {
               auto cand = static_cast<Candidate*>(delphesColl->At(j));
-              auto edm4hepCand = addToCollection(cand, *mcps);
-              auto genParticles = cand->GetCandidates();
+              auto edm4hepCand = fromDelphesBase<edm4hep::ReconstructedParticle>(cand);
+              mcps->push_back(edm4hepCand);
 
-              std::cout << className << ": Delphes UniqueId = " << cand->GetUniqueID() 
-                        << " total related: "  << cand->GetCandidates()->GetEntries() << "\n";
+              // auto edm4hepCand = addToCollection(cand, *mcps);
+              // const auto& mom = cand->Momentum;
+              // std::cout << className << ": UniqueId: " << cand->GetUniqueID()
+              //           << "(Px, Py, Pz) = (" << mom.Px() << ", " << mom.Py() << ", " << mom.Pz() << ")"
+              //           << " | total related: "  << cand->GetCandidates()->GetEntries() << std::endl;
+              // printCandidates(cand->GetCandidates());
 
-              // The Candidate has potentially more than one attached candidate.
-              // However, by Delphes convention the first one is the MC particle
+              // The Candidate usually has two attached candidates in Delphes.
+              // Both seem to have the same properties. Following the Delphes
+              // convention the first one is the MC particle (e.g. in their
+              // TreeWriter)
               auto genCand = static_cast<Candidate*>(cand->GetCandidates()->At(0));
-              mcParticleRelations.emplace(genCand->GetUniqueID(), edm4hepCand);
+              mcParticleRelations.emplace_back(genCand->GetUniqueID(), edm4hepCand);
 
                 _IsolationVar->emplace_back(cand->IsolationVar);
                 _IsolationVarRhoCorr->emplace_back(cand->IsolationVarRhoCorr);
@@ -608,27 +669,26 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
             _ScalarHTHT->emplace_back(cand->Momentum.Pt());
           } else if (className == "MissingET") {
             // there will only ever be one element in this array
-            // no need to save it as a container 
+            // no need to save it as a container
             auto cand = static_cast<Candidate*>(delphesColl->At(0));
             collmap_met[name.Data()] = &(cand->Momentum);
           } else if (className == "GenParticle") {
             for (int iCand = 0; iCand < delphesColl->GetEntriesFast(); ++iCand) {
               auto* delphesCand = static_cast<Candidate*>(delphesColl->At(iCand));
-              // auto cand = addToCollection(delphesCand, mcParticleCollection);
-              edm4hep::MCParticle cand;
-              cand.setCharge(delphesCand->Charge);
-              cand.setMass(delphesCand->Mass);
-              cand.setMomentum({(float) delphesCand->Momentum.Px(),
-                                (float) delphesCand->Momentum.Py(),
-                                (float) delphesCand->Momentum.Pz()});
-
+              auto cand = fromDelphesBase<edm4hep::MCParticle>(delphesCand);
               cand.setVertex({(float) delphesCand->Position.X(),
                               (float) delphesCand->Position.Y(),
                               (float) delphesCand->Position.Z()});
               cand.setPDG(delphesCand->PID); // delphes uses whatever hepevt.idhep provides
               mcParticleCollection.push_back(cand);
+              // TODO: - status
+              // TODO: - ...
 
               mcParticleIds.emplace(delphesCand->GetUniqueID(), cand);
+              // std::cout << "MC Particle, UniqueID: " << delphesCand->GetUniqueID() <<", "
+              //           << "(Px, Py, Pz) = (" << delphesCand->Momentum.Px() << ", "
+              //           << delphesCand->Momentum.Py() << ", " << delphesCand->Momentum.Pz() << "), "
+              //           << "E = " << delphesCand->Momentum.E() << ", M = " << delphesCand->Momentum.M() << "\n";
             }
           }
         }
@@ -655,17 +715,17 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
             notFoundIds.push_back(delphesRelation.first);
           }
 
-          // get all Ids here and remove the found ones to arrive at the unused ones
-          std::vector<UInt_t> unusedIds;
-          for (const auto& mcId : mcParticleIds) {
-            if (std::find(usedIds.cbegin(), usedIds.cend(), mcId.first) == usedIds.cend()) {
-              unusedIds.push_back(mcId.first);
-            }
-          }
+          // // get all Ids here and remove the found ones to arrive at the unused ones
+          // std::vector<UInt_t> unusedIds;
+          // for (const auto& mcId : mcParticleIds) {
+          //   if (std::find(usedIds.cbegin(), usedIds.cend(), mcId.first) == usedIds.cend()) {
+          //     unusedIds.push_back(mcId.first);
+          //   }
+          // }
 
-          std::cout << "Registered " << mcRecoAssociationCollection.size() << " relations. "
-                    << "used " << usedIds.size() << " unique MC Particles and found "
-                    << notFoundIds.size() << " Delphes candidates that were not in the GenParticle array\n";
+          // std::cout << "Registered " << mcRecoAssociationCollection.size() << " relations. "
+          //           << "used " << usedIds.size() << " unique MC Particles and found "
+          //           << notFoundIds.size() << " Delphes candidates that were not in the GenParticle array\n";
 
 
         }
