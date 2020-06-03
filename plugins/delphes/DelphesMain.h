@@ -733,6 +733,7 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
 
         modularDelphes->Clear();
         
+        writer.writeEvent();
         store.clearCollections();
         progressBar.Update(eventCounter, eventCounter);
         ++eventCounter;
