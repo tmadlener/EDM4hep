@@ -96,8 +96,8 @@ EDM4hepT fromDelphesBase(Candidate* delphesCand) {
 }
 
 // Following what is done in TreeWriter::FillParticles
-int findPhotonMC(Candidate* candidate) {
-  std::vector<int> relatedCandidates;
+std::vector<UInt_t> findParticles(Candidate* candidate) {
+  std::vector<UInt_t> relatedParticles;
   TIter it1(candidate->GetCandidates());
   it1.Reset();
 
@@ -106,31 +106,36 @@ int findPhotonMC(Candidate* candidate) {
 
     // particle
     if (candidate->GetCandidates()->GetEntriesFast() == 0) {
-      relatedCandidates.push_back(candidate->GetUniqueID());
+      relatedParticles.push_back(candidate->GetUniqueID());
       continue;
     }
 
     // track
     candidate = static_cast<Candidate*>(candidate->GetCandidates()->At(0));
     if (candidate->GetCandidates()->GetEntriesFast() == 0) {
-      relatedCandidates.push_back(candidate->GetUniqueID());
+      relatedParticles.push_back(candidate->GetUniqueID());
       continue;
     }
 
     // tower
     it2.Reset();
     while((candidate = static_cast<Candidate*>(it2.Next()))) {
-      relatedCandidates.push_back(candidate->GetCandidates()->At(0)->GetUniqueID());
+      relatedParticles.push_back(candidate->GetCandidates()->At(0)->GetUniqueID());
     }
   }
 
+  return relatedParticles;
+}
+
+int findPhotonMC(Candidate* candidate) {
+  const auto relatedParticles = findParticles(candidate);
   // If there is only one relation, assume that it is the generated particle and
   // return the ID. Otherwise return -1 to signal that this was not the case
-  if (relatedCandidates.size() == 1) {
-    return relatedCandidates[0];
+  if (relatedParticles.size() == 1) {
+    return relatedParticles[0];
   }
 
-  std::cout << "Found " << relatedCandidates.size() << " candidates related to the photon" << std::endl;
+  std::cout << "Found " << relatedParticles.size() << " candidates related to the photon" << std::endl;
 
   return -1;
 }
@@ -465,12 +470,12 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
             _DeltaPhi->clear();
             for (int j = 0; j < delphesColl->GetEntries(); j++) {
               auto cand = static_cast<Candidate*>(delphesColl->At(j));
-              auto mcp1 = mcps->create();
-              mcp1.setMass( cand->Mass ) ;
-              mcp1.setCharge( cand->Charge );
-              mcp1.setMomentum( { (float) cand->Momentum.Px(),
-                                  (float) cand->Momentum.Py(),
-                                  (float) cand->Momentum.Pz() }  ) ;
+              auto mcp1 = fromDelphesBase<edm4hep::ReconstructedParticle>(cand);
+              mcps->push_back(mcp1);
+
+              for (const auto& delphesId : findParticles(cand)) {
+                mcParticleRelations.emplace_back(delphesId, mcp1);
+              }
 
               _softdropped->emplace_back(cand->SoftDroppedJet.Px(),
                                          cand->SoftDroppedJet.Py(),
