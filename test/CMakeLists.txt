@@ -4,24 +4,26 @@ ENDIF()
 
 add_executable(write_events write_events.cc)
 target_include_directories(write_events PUBLIC ${CMAKE_SOURCE_DIR}/edm4hep )
-if(TEST_NO_AS_NEEDED AND TEST_AS_NEEDED)
-  target_link_libraries(write_events edm4hep
-   -Wl,--push-state,--no-as-needed edm4hepDict -Wl,--pop-state
-   podio::podioRootIO )
-else()
-  target_link_libraries(write_events edm4hep edm4hepDict podio::podioRootIO )
-endif()
+# if(TEST_NO_AS_NEEDED AND TEST_AS_NEEDED)
+#   target_link_libraries(write_events edm4hep
+#    -Wl,--push-state,--no-as-needed edm4hepDict -Wl,--pop-state
+#    podio::podioRootIO )
+# else()
+#   target_link_libraries(write_events edm4hep edm4hepDict podio::podioRootIO )
+# endif()
+target_link_libraries_force_dict(write_events edm4hepDict edm4hep podio::podioRootIO )
 add_test(NAME write_events COMMAND write_events)
 
 add_executable(read_events read_events.cc)
 target_include_directories(read_events PUBLIC ${CMAKE_SOURCE_DIR}/edm4hep )
-if(TEST_NO_AS_NEEDED AND TEST_AS_NEEDED)
-  target_link_libraries(read_events edm4hep
-   -Wl,--push-state,--no-as-needed edm4hepDict -Wl,--pop-state
-   podio::podioRootIO )
-else()
-  target_link_libraries(read_events edm4hep edm4hepDict podio::podioRootIO )
-endif()
+# if(TEST_NO_AS_NEEDED AND TEST_AS_NEEDED)
+#   target_link_libraries(read_events edm4hep
+#    -Wl,--push-state,--no-as-needed edm4hepDict -Wl,--pop-state
+#    podio::podioRootIO )
+# else()
+#   target_link_libraries(read_events edm4hep edm4hepDict podio::podioRootIO )
+# endif()
+target_link_libraries_force_dict(read_events edm4hepDict edm4hep podio::podioRootIO )
 add_test(NAME read_events COMMAND read_events)
 set_tests_properties(read_events PROPERTIES DEPENDS write_events)
 
@@ -29,13 +31,14 @@ IF(TARGET ROOT::ROOTDataFrame)
   add_executable(test_rdf test_rdf.cc)
   target_include_directories(test_rdf PUBLIC ${CMAKE_SOURCE_DIR}/edm4hep ${CMAKE_SOURCE_DIR}/dataframe )
 
-  if(TEST_NO_AS_NEEDED AND TEST_AS_NEEDED)
-    target_link_libraries(test_rdf edm4hepRDF
-      -Wl,--push-state,--no-as-needed edm4hepDict -Wl,--pop-state
-      ROOT::ROOTDataFrame )
-  else()
-    target_link_libraries(test_rdf edm4hepRDF edm4hepDict ROOT::ROOTDataFrame )
-  endif()
+  # if(TEST_NO_AS_NEEDED AND TEST_AS_NEEDED)
+  #   target_link_libraries(test_rdf edm4hepRDF
+  #     -Wl,--push-state,--no-as-needed edm4hepDict -Wl,--pop-state
+  #     ROOT::ROOTDataFrame )
+  # else()
+  #   target_link_libraries(test_rdf edm4hepRDF edm4hepDict ROOT::ROOTDataFrame )
+  # endif()
+  target_link_libraries_force_dict(test_rdf edm4hepDict edm4hepRDF ROOT::ROOTDataFrame )
   add_test(NAME test_rdf COMMAND test_rdf)
   set_tests_properties(test_rdf PROPERTIES DEPENDS write_events)
 endif()
