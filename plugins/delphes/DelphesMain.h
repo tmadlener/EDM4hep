@@ -422,8 +422,8 @@ int doit(int argc, char *argv[], DelphesInputReader& inputReader) {
     modularDelphes->Clear();
 
 
-    for (Int_t entry = 0; inputReader.finished() && maxEvents > 0 ?  entry < maxEvents : true && !interrupted; ++entry) {
-      std::cout << inputReader.finished() << " "<< entry << " " << maxEvents << " " << (maxEvents > 0 ?  entry < maxEvents : true) <<   std::endl;
+    for (Int_t entry = 0; inputReader.finished() && (maxEvents > 0 ?  entry < maxEvents : true) && !interrupted; ++entry) {
+      // std::cout << inputReader.finished() << " "<< entry << " " << maxEvents << " " << (maxEvents > 0 ?  entry < maxEvents : true) <<   std::endl;
 
       bool success = inputReader.readEvent(modularDelphes, allParticleOutputArray, stableParticleOutputArray, partonOutputArray);
       if (!success) {
