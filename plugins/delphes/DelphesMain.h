@@ -85,6 +85,26 @@ template <typename EDM4hepT>
 EDM4hepT fromDelphesBase(Candidate* delphesCand) {
   EDM4hepT cand;
   cand.setCharge(delphesCand->Charge);
+  // TODO: Delphes deals with masses a bit strangely. For the Muons and
+  // Electrons it is set at the Candidate level (i.e. before TreeWriter) but for
+  // Jets it is not. On the other hand, at the level of the classes that are
+  // written out by the TreeWriter, it doesn't store the masses for the Muons
+  // and Electrons, but it computes the Jet masses from the 4-momentum and
+  // stores that. Additionally, when getting the 4-vector via Muon::P4() or
+  // Electron::P4() delphes sets the masses to 0, but uses the Jet::Mass
+  // member in the case of Jet::P4()
+  // See: https://github.com/delphes/delphes/blob/master/classes/DelphesClasses.cc#L84-L98
+  //
+  // The consequence is that Muons and Electrons stored as
+  // edm4hep::ReconstructedParticle will currently have non-zero masses, whereas
+  // Jets will have zero masses. Delphes outputs on the other hand will have
+  // zero masses for the Muons and Electrons, but non-zero masses for the Jets
+  // (i.e. reversed to edm4hep).
+  //
+  // This mainly makes a difference for the Energy computation of the
+  // reconstructed Jets, as can be seen by comparing the histograms produced by
+  // examples/read_{delphes,edm4hep}.C. For the Muons and Electrons the masses
+  // are negligible enough for the total energy that no difference arises.
   cand.setMass(delphesCand->Mass);
   cand.setMomentum({
     (float) delphesCand->Momentum.Px(),
