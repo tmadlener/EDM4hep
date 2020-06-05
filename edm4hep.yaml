@@ -348,10 +348,10 @@ datatypes :
     Author : "F.Gaede, DESY"
     Members:
       - int                    type           //type of reconstructed particle. Check/set collection parameters ReconstructedParticleTypeNames and ReconstructedParticleTypeValues.
+      - float                  energy         // [GeV] energy of the reconstructed particle.
       - edm4hep::Vector3f      momentum       // [GeV] particle momentum
       - edm4hep::Vector3f      referencePoint // [mm] reference, i.e. where the particle has been measured
       - float                  charge         //charge of the reconstructed particle.
-      - float                  mass           // [GeV] mass of the reconstructed particle, set independently from four vector
       - float                  goodnessOfPID  //overall goodness of the PID on a scale of [0;1]
       - std::array<float,10>   covMatrix      //cvariance matrix of the reconstructed particle 4vector (10 parameters). Stored as lower triangle matrix of the four momentum (px,py,pz,E), i.e. cov(px,px), cov(py,##
     OneToOneRelations:
@@ -366,16 +366,20 @@ datatypes :
       includes: "#include <cmath>\n
       "
       const_declaration: "
-      float getEnergy() const { return std::sqrt(getMomentum()[0] * getMomentum()[0] + \n
-                                                 getMomentum()[1] * getMomentum()[1] + \n
-                                                 getMomentum()[2] * getMomentum()[2] + \n
-                                                 getMass()*getMass()); }\n
+      float getMass() const { return std::sqrt(getEnergy() * getEnergy() - \n
+                                               getMomentum()[0] * getMomentum()[0] - \n
+                                               getMomentum()[1] * getMomentum()[1] - \n
+                                               getMomentum()[2] * getMomentum()[2]); }
       "
 
       declaration: "
       bool isCompound() { return particles_size() > 0 ;}\n
       //vertex where the particle decays This method actually returns the start vertex from the first daughter particle found.\n 
       //TODO: edm4hep::Vertex  getEndVertex() { return  edm4hep::Vertex(  (getParticles(0).isAvailable() ? getParticles(0).getStartVertex() :  edm4hep::Vertex(0,0) ) ) ; }\n     
+      void setMass(float mass) { setEnergy( getMomentum()[0] * getMomentum()[0] + \n
+                                            getMomentum()[1] * getMomentum()[1] + \n
+                                            getMomentum()[2] * getMomentum()[2] + \n
+                                            mass * mass); }
       "
 
   edm4hep::MCRecoParticleAssociation:
