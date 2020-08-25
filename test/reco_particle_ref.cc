@@ -131,8 +131,8 @@ void writeRecoParticleRef(const TestState& testState) {
     }
 
     // Check that what we write out is as expected
-    ASSERT_EQUAL(recoColl.size(), testState.nEntries[iEvent], "Created wrong number of entries");
-    ASSERT_EQUAL(refColl.size(), testState.nRefs[iEvent], "Created wrong number of references");
+    ASSERT_EQUAL((int)recoColl.size(), testState.nEntries[iEvent], "Created wrong number of entries");
+    ASSERT_EQUAL((int)refColl.size(), testState.nRefs[iEvent], "Created wrong number of references");
 
     int i = 0;
     for (const auto& ref : refColl) {
@@ -157,12 +157,12 @@ void readRecoParticleRef(const TestState& testState) {
   for (int iEvent = 0; iEvent < NEVENTS; ++iEvent) {
     auto& recoColl = store.get<edm4hep::ReconstructedParticleCollection>("RecoParticles");
     ASSERT_CONDITION(recoColl.isValid(), "'RecoParticles' collection is not present");
-    ASSERT_EQUAL(recoColl.size(), testState.nEntries[iEvent],
+    ASSERT_EQUAL((int)recoColl.size(), testState.nEntries[iEvent],
                  "'RecoParticles' collection has the wrong number of entries");
 
     auto& refColl = store.get<edm4hep::RecoParticleRefCollection>("RecoRefs");
     ASSERT_CONDITION(refColl.isValid(), "'RecoRefs' collection is not present");
-    ASSERT_EQUAL(refColl.size(), testState.nRefs[iEvent],
+    ASSERT_EQUAL((int)refColl.size(), testState.nRefs[iEvent],
                  "'RecoRefs' collection has the wrong number of entries");
 
     int i = 0;
