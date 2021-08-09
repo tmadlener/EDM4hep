@@ -297,6 +297,11 @@ datatypes :
     VectorMembers:
       - edm4hep::ObjectID  rawHits     //raw data hits. Check getType to get actual data type. 
 
+  edm4hep::SimpleTrackerHit:
+    Description: "Simple tracker hit for TrackerHitWrapper tests"
+    Author: "T.Madlener, DESY"
+    Members:
+      - edm4hep::Vector3d position  // hit position in [mm]
 
  #----------  TPCHit
   edm4hep::TPCHit:

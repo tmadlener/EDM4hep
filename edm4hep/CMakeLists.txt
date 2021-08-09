@@ -1,7 +1,11 @@
 
 # For now unconditionally generate all the code that is supported by the
 # installed podio
-PODIO_GENERATE_DATAMODEL(edm4hep ../edm4hep.yaml headers sources IO_BACKEND_HANDLERS ${PODIO_IO_HANDLERS})
+# PODIO_GENERATE_DATAMODEL(edm4hep ../edm4hep.yaml headers sources IO_BACKEND_HANDLERS ${PODIO_IO_HANDLERS})
+
+include(headers.cmake)
+include(sources.cmake)
+
 
 PODIO_ADD_DATAMODEL_CORE_LIB(edm4hep "${headers}" "${sources}")
 
