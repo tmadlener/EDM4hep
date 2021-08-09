@@ -24,6 +24,7 @@ class SimpleTrackerHit {
   friend class SimpleTrackerHitCollection;
   friend class SimpleTrackerHitCollectionIterator;
   friend class ConstSimpleTrackerHit;
+  friend class TrackerHitWrapper;
 
 public:
 

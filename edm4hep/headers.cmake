@@ -105,6 +105,7 @@ edm4hep/TrackerHitData.h
 edm4hep/TrackerHit.h
 edm4hep/TrackerHitObj.h
 edm4hep/TrackerHitSIOBlock.h
+edm4hep/TrackerHitWrapper.h
 edm4hep/Track.h
 edm4hep/TrackObj.h
 edm4hep/TrackSIOBlock.h
