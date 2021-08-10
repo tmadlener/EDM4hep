@@ -93,12 +93,12 @@ public:
 
 
 
-  void addToTrackerHits(::edm4hep::ConstTrackerHit);
+  void addToTrackerHits(::edm4hep::ConstTrackerHitWrapper);
   unsigned int trackerHits_size() const;
-  ::edm4hep::ConstTrackerHit getTrackerHits(unsigned int) const;
-  std::vector<::edm4hep::ConstTrackerHit>::const_iterator trackerHits_begin() const;
-  std::vector<::edm4hep::ConstTrackerHit>::const_iterator trackerHits_end() const;
-  podio::RelationRange<::edm4hep::ConstTrackerHit> getTrackerHits() const;
+  ::edm4hep::ConstTrackerHitWrapper getTrackerHits(unsigned int) const;
+  std::vector<::edm4hep::ConstTrackerHitWrapper>::const_iterator trackerHits_begin() const;
+  std::vector<::edm4hep::ConstTrackerHitWrapper>::const_iterator trackerHits_end() const;
+  podio::RelationRange<::edm4hep::ConstTrackerHitWrapper> getTrackerHits() const;
   void addToTracks(::edm4hep::ConstTrack);
   unsigned int tracks_size() const;
   ::edm4hep::ConstTrack getTracks(unsigned int) const;

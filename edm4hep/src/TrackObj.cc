@@ -7,7 +7,7 @@ namespace edm4hep {
 TrackObj::TrackObj() :
   ObjBase{{podio::ObjectID::untracked, podio::ObjectID::untracked}, 0},
   data(),
-  m_trackerHits(new std::vector<::edm4hep::ConstTrackerHit>()),
+  m_trackerHits(new std::vector<::edm4hep::ConstTrackerHitWrapper>()),
   m_tracks(new std::vector<::edm4hep::ConstTrack>()),
   m_subDetectorHitNumbers(new std::vector<int>()),
   m_trackStates(new std::vector<edm4hep::TrackState>())
@@ -20,7 +20,7 @@ TrackObj::TrackObj(const podio::ObjectID id_, TrackData data_) :
 TrackObj::TrackObj(const TrackObj& other) :
   ObjBase{{podio::ObjectID::untracked, podio::ObjectID::untracked}, 0},
   data(other.data),
-  m_trackerHits(new std::vector<::edm4hep::ConstTrackerHit>(*(other.m_trackerHits))),
+  m_trackerHits(new std::vector<::edm4hep::ConstTrackerHitWrapper>(*(other.m_trackerHits))),
   m_tracks(new std::vector<::edm4hep::ConstTrack>(*(other.m_tracks))),
   m_subDetectorHitNumbers(new std::vector<int>(*(other.m_subDetectorHitNumbers))),
   m_trackStates(new std::vector<edm4hep::TrackState>(*(other.m_trackStates)))

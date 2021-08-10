@@ -66,18 +66,18 @@ void Track::setDEdxError(float value) { m_obj->data.dEdxError = value; }
 void Track::setRadiusOfInnermostHit(float value) { m_obj->data.radiusOfInnermostHit = value; }
 
 
-void Track::addToTrackerHits(::edm4hep::ConstTrackerHit component) {
+void Track::addToTrackerHits(::edm4hep::ConstTrackerHitWrapper component) {
   m_obj->m_trackerHits->push_back(component);
   m_obj->data.trackerHits_end++;
 }
 
-std::vector<::edm4hep::ConstTrackerHit>::const_iterator Track::trackerHits_begin() const {
+std::vector<::edm4hep::ConstTrackerHitWrapper>::const_iterator Track::trackerHits_begin() const {
   auto ret_value = m_obj->m_trackerHits->begin();
   std::advance(ret_value, m_obj->data.trackerHits_begin);
   return ret_value;
 }
 
-std::vector<::edm4hep::ConstTrackerHit>::const_iterator Track::trackerHits_end() const {
+std::vector<::edm4hep::ConstTrackerHitWrapper>::const_iterator Track::trackerHits_end() const {
   auto ret_value = m_obj->m_trackerHits->begin();
   std::advance(ret_value, m_obj->data.trackerHits_end);
   return ret_value;
@@ -87,14 +87,14 @@ unsigned int Track::trackerHits_size() const {
   return m_obj->data.trackerHits_end - m_obj->data.trackerHits_begin;
 }
 
-::edm4hep::ConstTrackerHit Track::getTrackerHits(unsigned int index) const {
+::edm4hep::ConstTrackerHitWrapper Track::getTrackerHits(unsigned int index) const {
   if (trackerHits_size() > index) {
     return m_obj->m_trackerHits->at(m_obj->data.trackerHits_begin + index);
   }
   throw std::out_of_range("index out of bounds for existing references");
 }
 
-podio::RelationRange<::edm4hep::ConstTrackerHit> Track::getTrackerHits() const {
+podio::RelationRange<::edm4hep::ConstTrackerHitWrapper> Track::getTrackerHits() const {
   auto begin = m_obj->m_trackerHits->begin();
   std::advance(begin, m_obj->data.trackerHits_begin);
   auto end = m_obj->m_trackerHits->begin();

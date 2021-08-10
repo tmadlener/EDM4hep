@@ -22,6 +22,7 @@ class ConstSimpleTrackerHit {
   friend class SimpleTrackerHit;
   friend class SimpleTrackerHitCollection;
   friend class SimpleTrackerHitConstCollectionIterator;
+  friend class ConstTrackerHitWrapper;
 
 public:
   /// default constructor

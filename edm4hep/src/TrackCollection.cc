@@ -4,6 +4,7 @@
 
 #include "edm4hep/TrackCollection.h"
 #include "edm4hep/TrackerHitCollection.h"
+#include "edm4hep/SimpleTrackerHitCollection.h"
 #include <numeric>
 
 // standard includes
@@ -15,7 +16,7 @@ namespace edm4hep {
 
 TrackCollection::TrackCollection() :
   m_isValid(false), m_isReadFromFile(false), m_collectionID(0), m_entries(),
-  m_rel_trackerHits(new std::vector<edm4hep::ConstTrackerHit>()),
+  m_rel_trackerHits(new std::vector<edm4hep::ConstTrackerHitWrapper>()),
   m_rel_tracks(new std::vector<edm4hep::ConstTrack>()),
   m_vec_subDetectorHitNumbers(new std::vector<int>()),
   m_vec_trackStates(new std::vector<edm4hep::TrackState>()),
@@ -181,11 +182,19 @@ bool TrackCollection::setReferences(const podio::ICollectionProvider* collection
     if (id.index != podio::ObjectID::invalid) {
       CollectionBase* coll = nullptr;
       collectionProvider->get(id.collectionID, coll);
-      edm4hep::TrackerHitCollection* tmp_coll = static_cast<edm4hep::TrackerHitCollection*>(coll);
-      const auto tmp = (*tmp_coll)[id.index];
-      m_rel_trackerHits->emplace_back(tmp);
+      if (coll->getValueTypeName() == "edm4hep::TrackerHit") {
+        edm4hep::TrackerHitCollection* tmp_coll = static_cast<edm4hep::TrackerHitCollection*>(coll);
+        const auto tmp = (*tmp_coll)[id.index];
+        m_rel_trackerHits->emplace_back(tmp); 
+      } else if (coll->getValueTypeName() == "edm4hep::SimpleTrackerHit") {
+        edm4hep::SimpleTrackerHitCollection* tmp_coll = static_cast<edm4hep::SimpleTrackerHitCollection*>(coll);
+        const auto tmp = (*tmp_coll)[id.index];
+        m_rel_trackerHits->emplace_back(tmp);
+      }
+
+
     } else {
-      m_rel_trackerHits->emplace_back(nullptr);
+      m_rel_trackerHits->emplace_back(static_cast<TrackerHitObj*>(nullptr));
     }
   }
 

@@ -6,7 +6,8 @@
 // data model specific includes
 #include "edm4hep/TrackData.h"
 #include "edm4hep/TrackState.h"
-#include "edm4hep/TrackerHit.h"
+// #include "edm4hep/TrackerHit.h"
+#include "edm4hep/TrackerHitWrapper.h"
 #include "podio/RelationRange.h"
 #include <vector>
 
@@ -34,7 +35,7 @@ public:
 
 public:
   TrackData data;
-  std::vector<::edm4hep::ConstTrackerHit>* m_trackerHits{nullptr};
+  std::vector<::edm4hep::ConstTrackerHitWrapper>* m_trackerHits{nullptr};
   std::vector<::edm4hep::ConstTrack>* m_tracks{nullptr};
   std::vector<int>* m_subDetectorHitNumbers{nullptr};
   std::vector<edm4hep::TrackState>* m_trackStates{nullptr};

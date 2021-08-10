@@ -28,6 +28,7 @@ class TrackerHit {
   friend class TrackerHitCollectionIterator;
   friend class ConstTrackerHit;
   friend class TrackerHitWrapper;
+  friend class ConstTrackerHitWrapper;
 
 public:
 

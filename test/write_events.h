@@ -6,6 +6,9 @@
 #include "edm4hep/SimTrackerHitCollection.h"
 #include "edm4hep/CaloHitContributionCollection.h"
 #include "edm4hep/SimCalorimeterHitCollection.h"
+#include "edm4hep/SimpleTrackerHitCollection.h"
+#include "edm4hep/TrackerHitCollection.h"
+#include "edm4hep/TrackCollection.h"
 
 // STL
 #include <iostream>
@@ -34,6 +37,13 @@ void write(std::string outfilename) {
   auto& sccons = store.create<edm4hep::CaloHitContributionCollection>("SimCalorimeterHitContributions");
   writer.registerForWrite("SimCalorimeterHitContributions");
 
+  auto& tracks = store.create<edm4hep::TrackCollection>("tracks");
+  writer.registerForWrite("tracks");
+  auto& hits = store.create<edm4hep::TrackerHitCollection>("hits");
+  writer.registerForWrite("hits");
+  auto &simpleHits =
+      store.create<edm4hep::SimpleTrackerHitCollection>("simpleHits");
+  writer.registerForWrite("simpleHits");
 
   unsigned nevents = 10 ;
 
@@ -182,6 +192,29 @@ void write(std::string outfilename) {
         << schs << std::endl ;
 
     //===============================================================================
+
+    auto track = tracks.create();
+    auto hit = hits.create();
+    hit.setPosition({1.f, 2.f, 3.f});
+    track.addToTrackerHits(hit);
+
+    auto simpleHit = simpleHits.create();
+    simpleHit.setPosition({10.f, 20.f, 30.f});
+    track.addToTrackerHits(simpleHit);
+
+    const auto trackerHits = track.getTrackerHits();
+
+
+    int j = 1;
+    for (const auto& th : trackerHits) {
+      std::cout << "trackerHit: id() = " << th.id() << std::endl;
+      const auto pos = th.getPosition();
+      std::cout << "Position: " << pos[0] << " " << pos[1] << " " << pos[2] << std::endl;
+      if (pos[0] != j * 1.0f) throw std::runtime_error("wrong position value");
+      if (pos[1] != j * 2.0f) throw std::runtime_error("wrong position value");
+      if (pos[2] != j * 3.0f) throw std::runtime_error("wrong position value");
+      j *= 10;
+    }
 
     writer.writeEvent();
     store.clearCollections();

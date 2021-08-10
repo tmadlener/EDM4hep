@@ -182,8 +182,8 @@ private:
   TrackObjPointerContainer m_entries;
 
   // members to handle 1-to-N-relations
-  std::vector<edm4hep::ConstTrackerHit>* m_rel_trackerHits; ///< Relation buffer for read / write
-  std::vector<std::vector<edm4hep::ConstTrackerHit>*> m_rel_trackerHits_tmp{}; ///< Relation buffer for internal book-keeping
+  std::vector<edm4hep::ConstTrackerHitWrapper>* m_rel_trackerHits; ///< Relation buffer for read / write
+  std::vector<std::vector<edm4hep::ConstTrackerHitWrapper>*> m_rel_trackerHits_tmp{}; ///< Relation buffer for internal book-keeping
   std::vector<edm4hep::ConstTrack>* m_rel_tracks; ///< Relation buffer for read / write
   std::vector<std::vector<edm4hep::ConstTrack>*> m_rel_tracks_tmp{}; ///< Relation buffer for internal book-keeping
 

@@ -8,6 +8,7 @@
 #include "edm4hep/SimCalorimeterHitCollection.h"
 
 // podio specific includes
+#include "edm4hep/TrackCollection.h"
 #include "podio/EventStore.h"
 
 // STL
@@ -158,6 +159,27 @@ void processEvent(podio::EventStore& store, bool verboser, unsigned eventNum) {
  //  } else {
  //    throw std::runtime_error("Collection 'SimCalorimeterHitContributions' should be present");
  //  }
+
+  auto& tracks = store.get<edm4hep::TrackCollection>("tracks");
+  if (tracks.size() != 1) {
+    throw std::runtime_error("tracks should have only one element");
+  }
+
+  auto track = tracks[0];
+  const auto trackerHits = track.getTrackerHits();
+  if (trackerHits.size() != 2) {
+    throw std::runtime_error("track should have 2 tracker hits");
+  }
+  int i = 1;
+  for (const auto& th : trackerHits) {
+    std::cout << "trackerHit: id() = " << th.id() << std::endl;
+    const auto pos = th.getPosition();
+    std::cout << "Position: " << pos[0] << " " << pos[1] << " " << pos[2] << std::endl;
+    if (pos[0] != i * 1.0f) throw std::runtime_error("wrong position value");
+    if (pos[1] != i * 2.0f) throw std::runtime_error("wrong position value");
+    if (pos[2] != i * 3.0f) throw std::runtime_error("wrong position value");
+    i *= 10;
+  }
 
 }
 
