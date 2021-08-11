@@ -14,23 +14,48 @@ struct remove_cvref {
 template<class T>
 using remove_cvref_t = typename remove_cvref<T>::type;
 
-template<class> inline constexpr bool always_false_v = false;
+template<typename T, typename ...Ts>
+constexpr bool isAnyOf = (std::is_same_v<remove_cvref_t<T>, Ts> || ...);
+
+template<typename T, typename ...Ts>
+struct EnableIfAnyOf : std::enable_if<isAnyOf<T, Ts...>, bool> {};
+
+template<typename T>
+struct EnableIfAnyTrackerHit : EnableIfAnyOf<T,
+                                             edm4hep::TrackerHit,
+                                             edm4hep::SimpleTrackerHit,
+                                             edm4hep::ConstTrackerHit,
+                                             edm4hep::ConstSimpleTrackerHit> {};
+
+template<typename T>
+using EnableIfAnyTrackerHitT = typename EnableIfAnyTrackerHit<T>::type;
+
+template<typename T>
+struct EnableIfMutableTrackerHit : EnableIfAnyOf<T,
+                                                 edm4hep::TrackerHit,
+                                                 edm4hep::SimpleTrackerHit> {};
+
+template<typename T>
+using EnableIfMutableTrackerHitT = typename EnableIfMutableTrackerHit<T>::type;
+
+template<typename T>
+struct EnableIfTrackerHitObjPtr : EnableIfAnyOf<T,
+                                                edm4hep::SimpleTrackerHitObj*,
+                                                edm4hep::TrackerHitObj*> {};
+
+template<typename T>
+using EnableIfTrackerHitObjPtrT = typename EnableIfTrackerHitObjPtr<T>::type;
 
 namespace edm4hep {
 
 class ConstTrackerHitWrapper {
 public:
-  template<typename TH,
-           typename std::enable_if_t<
-             std::is_same_v<remove_cvref_t<TH>, edm4hep::TrackerHit> ||
-             std::is_same_v<remove_cvref_t<TH>, edm4hep::SimpleTrackerHit> ||
-             std::is_same_v<remove_cvref_t<TH>, edm4hep::ConstTrackerHit> ||
-             std::is_same_v<remove_cvref_t<TH>, edm4hep::ConstSimpleTrackerHit>, bool> = false>
+  template<typename TH, EnableIfAnyTrackerHitT<TH> = false>
   ConstTrackerHitWrapper(TH&& trackerHit) : m_Hit(trackerHit.m_obj) {
     trackerHit.m_obj->acquire(); // TODO: properly do this via std::visit
   }
 
-  template<typename ObjPtr>
+  template<typename ObjPtr, EnableIfTrackerHitObjPtrT<ObjPtr> = false>
   ConstTrackerHitWrapper(ObjPtr* hitObjPtr) : m_Hit(hitObjPtr) {
     hitObjPtr->acquire();
   }
@@ -80,20 +105,12 @@ private:
 
 class TrackerHitWrapper {
 public:
-  template<typename TH,
-           typename std::enable_if_t<
-             std::is_same_v<remove_cvref_t<TH>, edm4hep::TrackerHit> ||
-             std::is_same_v<remove_cvref_t<TH>, edm4hep::SimpleTrackerHit>,
-            bool> = false>
+  template<typename TH, EnableIfMutableTrackerHitT<TH> = false>
   TrackerHitWrapper(TH&& trackerHit) : m_Hit(trackerHit.m_obj) {
     trackerHit.m_obj->acquire(); // TODO: properly do this via std::visit
   }
 
-  template<typename ObjPtr,
-           typename std::enable_if_t<
-             std::is_same_v<std::remove_cv_t<ObjPtr>, edm4hep::TrackerHitObj*> ||
-             std::is_same_v<std::remove_cv_t<ObjPtr>, edm4hep::SimpleTrackerHitObj*>, bool> = false>
-
+  template<typename ObjPtr, EnableIfTrackerHitObjPtrT<ObjPtr> = false>
   TrackerHitWrapper(ObjPtr* hitObjPtr) : m_Hit(hitObjPtr) {
     hitObjPtr->acquire();
   }
