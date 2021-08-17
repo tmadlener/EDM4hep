@@ -10,6 +10,7 @@
 #include <array>
 #include <vector>
 #include "podio/ObjectID.h"
+#include "podio/GenericWrapper.h"
 
 
 
@@ -26,8 +27,11 @@ class ConstTrackerHit {
   friend class TrackerHitCollection;
   friend class TrackerHitConstCollectionIterator;
   friend class ConstTrackerHitWrapper;
+  template<typename...>
+  friend class podio::GenericWrapper;
 
 public:
+  using ObjPtrT = TrackerHitObj*;
   /// default constructor
   ConstTrackerHit();
   ConstTrackerHit(unsigned long long cellID, int type, int quality, float time, float eDep, float eDepError, float edx, edm4hep::Vector3d position, std::array<float, 6> covMatrix);

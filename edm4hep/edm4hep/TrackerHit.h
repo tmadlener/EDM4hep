@@ -12,6 +12,7 @@
 #include <vector>
 #include "podio/ObjectID.h"
 #include <ostream>
+#include "podio/GenericWrapper.h"
 
 
 
@@ -29,8 +30,11 @@ class TrackerHit {
   friend class ConstTrackerHit;
   friend class TrackerHitWrapper;
   friend class ConstTrackerHitWrapper;
+  template<typename...>
+  friend class podio::GenericWrapper;
 
 public:
+  using ObjPtrT = TrackerHitObj*;
 
   /// default constructor
   TrackerHit();

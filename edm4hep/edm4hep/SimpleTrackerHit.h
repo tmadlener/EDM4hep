@@ -9,6 +9,7 @@
 #include "edm4hep/Vector3d.h"
 #include "podio/ObjectID.h"
 #include <ostream>
+#include "podio/GenericWrapper.h"
 
 
 
@@ -26,8 +27,11 @@ class SimpleTrackerHit {
   friend class ConstSimpleTrackerHit;
   friend class TrackerHitWrapper;
   friend class ConstTrackerHitWrapper;
+  template<typename...>
+  friend class podio::GenericWrapper;
 
 public:
+  using ObjPtrT = SimpleTrackerHitObj*;
 
   /// default constructor
   SimpleTrackerHit();
