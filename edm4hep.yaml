@@ -65,6 +65,32 @@ components:
         float operator[](unsigned i) const { return *( &a + i ) ; }\n
         "
 
+    edm4hep::CartesianCovMatrix:
+      Members:
+        - double xx
+        - double yy
+        - double zz
+        - double xy
+        - double xz
+        - double yz
+      ExtraCode:
+        declaration: "
+        constexpr CartesianCovMatrix() = default;\n
+        constexpr CartesianCovMatrix(double vxx, double vyy, double vzz, double vxy=0, double vxz = 0, double vyz = 0)\n
+          : xx(vxx), yy(vyy), zz(vzz), xy(vxy), xz(vxz), yz(vyz) {}\n
+        constexpr double operator()(unsigned i, unsigned j) const {\n
+          // NOTE: relying quite a bit on struct layout and alignment here!
+          // diagonal\n
+          if (i == j) {\n
+            return *(&xx + i);\n
+          }\n
+          // off-diagonal\n
+          // we have as options (0, 1), (0, 2) and (1, 2) (and mirrored)\n
+          // note that, starting from xy, we find the correct element at (i+j-1)\n
+          return *(&xy + i + j - 1);\n
+        }\n
+        "
+
       # Parametrized description of a particle track
     edm4hep::TrackState:
       Members:
@@ -313,8 +339,7 @@ datatypes :
       - float eDep                     //energy deposited on the hit [GeV].
       - float eDepError                //error measured on EDep [GeV].
       - edm4hep::Vector3d position     //hit position in [mm].
-      - std::array<float,6> covMatrix  //covariance of the position (x,y,z), stored as lower triangle matrix. i.e. cov(x,x) , cov(y,x) , cov(y,y) , cov(z,x) , cov(z,y) , cov(z,z)
-    VectorMembers:
+      - edm4hep::CartesianCovMatrix covMatrix // covariance of the position
       - edm4hep::ObjectID  rawHits     //raw data hits. Check getType to get actual data type.
 
 
@@ -334,7 +359,7 @@ datatypes :
       - float du                       //measurement error along the direction
       - float dv                       //measurement error along the direction
       - edm4hep::Vector3d position     //hit position in [mm].
-      - std::array<float,6> covMatrix  //covariance of the position (x,y,z), stored as lower triangle matrix. i.e. cov(x,x) , cov(y,x) , cov(y,y) , cov(z,x) , cov(z,y) , cov(z,z)
+      - edm4hep::CartesianCovMatrix covMatrix // covariance matrix of the position
     VectorMembers:
       - edm4hep::ObjectID  rawHits     //raw data hits. Check getType to get actual data type.
 
@@ -379,7 +404,7 @@ datatypes :
       - float               chi2          //chi-squared of the vertex fit
       - float               probability   //probability of the vertex fit
       - edm4hep::Vector3f   position      // [mm] position of the vertex.
-      - std::array<float,6> covMatrix     //covariance matrix of the position (stored as lower triangle matrix, i.e. cov(xx),cov(y,x),cov(z,x),cov(y,y),... )
+      - edm4hep::CartesianCovMatrix covMatrix // covariance matrix of the position
       - int32_t                 algorithmType //type code for the algorithm that has been used to create the vertex - check/set the collection parameters AlgorithmName and AlgorithmType.
     VectorMembers:
       - float               parameters    //additional parameters related to this vertex - check/set the collection parameter "VertexParameterNames" for the parameters meaning.
