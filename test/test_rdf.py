@@ -15,6 +15,7 @@ df2 = (df.Define('MCParticles_pt', 'edm4hep::utils::pt(MCParticles)')
        .Define('MCParticles_eta', 'edm4hep::utils::eta(MCParticles)')
        .Define('MCParticles_cosTheta', 'edm4hep::utils::cos_theta(MCParticles)')
        .Define('SimTrackerHits_r', 'edm4hep::utils::r(SimTrackerHits)')
+       .Define('MCParticle_p4', 'edm4hep::utils::p4M(MCParticles)')
        )
 
 filename = 'edm4hep_events_py_rdf.root'
@@ -25,4 +26,5 @@ df2.Snapshot('events', filename,
              ['MCParticles_pt',
               'MCParticles_eta',
               'MCParticles_cosTheta',
-              'SimTrackerHits_r'])
+              'SimTrackerHits_r',
+              'MCParticle_p4'])
