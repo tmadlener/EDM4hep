@@ -22,13 +22,14 @@ int main(int argc, char* argv[]) {
                  .Define("MCParticles_eta", eta<edm4hep::MCParticleData>, {"MCParticles"})
                  .Define("MCParticles_cosTheta", cos_theta<edm4hep::MCParticleData>, {"MCParticles"})
                  .Define("SimTrackerHits_r", r<edm4hep::SimTrackerHitData>, {"SimTrackerHits"})
-                 .Define("MCParticle_p4", p4M<edm4hep::MCParticleData>, {"MCParticles"});
+                 .Define("MCParticle_p4", p4M<edm4hep::MCParticleData>, {"MCParticles"})
+                 .Define("MCParticle_energy", E<edm4hep::LorentzVectorM>, {"MCParticle_p4"});
 
   std::string outfilename = "edm4hep_events_rdf.root";
   std::cout << "Writing snapshot to disk ... \t" << outfilename << std::endl;
 
   df2.Snapshot("events", outfilename,
-               {"MCParticles_pt", "MCParticles_eta", "MCParticles_cosTheta", "SimTrackerHits_r", "MCParticle_p4"});
+               {"MCParticles_pt", "MCParticles_eta", "MCParticles_cosTheta", "SimTrackerHits_r", "MCParticle_energy"});
 
   return 0;
 }
