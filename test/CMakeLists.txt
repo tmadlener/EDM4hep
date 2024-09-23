@@ -38,14 +38,14 @@ set_tests_properties(
    SKIP_REGULAR_EXPRESSION "collected 0 items / 1 skipped"
 )
 
-set_tests_properties(
-  check_complete_file
-  check_complete_file_rntuple
+# set_tests_properties(
+#   check_complete_file
+#   check_complete_file_rntuple
 
-  PROPERTIES
-   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-   FAIL_REGULAR_EXPRESSION ""
-)
+#   PROPERTIES
+#    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#    FAIL_REGULAR_EXPRESSION ""
+# )
 
 add_executable(write_events write_events.cc)
 target_include_directories(write_events PUBLIC ${PROJECT_SOURCE_DIR}/edm4hep )
